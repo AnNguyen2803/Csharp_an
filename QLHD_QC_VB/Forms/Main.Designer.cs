@@ -38,6 +38,7 @@
             mnuhopdongvietbai = new ToolStripMenuItem();
             mnubaocao = new ToolStripMenuItem();
             mnutimkiem = new ToolStripMenuItem();
+            mnutkkhachhang = new ToolStripMenuItem();
             mnuthoat = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -109,9 +110,17 @@
             // 
             // mnutimkiem
             // 
+            mnutimkiem.DropDownItems.AddRange(new ToolStripItem[] { mnutkkhachhang });
             mnutimkiem.Name = "mnutimkiem";
             mnutimkiem.Size = new Size(84, 24);
             mnutimkiem.Text = "Tìm kiếm";
+            // 
+            // mnutkkhachhang
+            // 
+            mnutkkhachhang.Name = "mnutkkhachhang";
+            mnutkkhachhang.Size = new Size(224, 26);
+            mnutkkhachhang.Text = "Khách hàng";
+            mnutkkhachhang.Click += mnutkkhachhang_Click;
             // 
             // mnuthoat
             // 
@@ -148,5 +157,6 @@
         private ToolStripMenuItem mnubaocao;
         private ToolStripMenuItem mnutimkiem;
         private ToolStripMenuItem mnuthoat;
+        private ToolStripMenuItem mnutkkhachhang;
     }
 }

@@ -51,5 +51,11 @@ namespace QLHD_QC_VB.Forms
             frmhopdongvietbai a = new frmhopdongvietbai();
             a.Show();
         }
+
+        private void mnutkkhachhang_Click(object sender, EventArgs e)
+        {
+            frmtimkiemkh a = new frmtimkiemkh();
+            a.Show();
+        }
     }
 }
