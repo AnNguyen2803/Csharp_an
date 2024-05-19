@@ -68,6 +68,7 @@
             btntimkiem.TabIndex = 2;
             btntimkiem.Text = "Tìm kiếm";
             btntimkiem.UseVisualStyleBackColor = true;
+            btntimkiem.Click += btntimkiem_Click;
             // 
             // DataGridView
             // 
@@ -163,6 +164,7 @@
             Controls.Add(lbllvhd);
             Name = "frmtimkiemkh";
             Text = "Tìm kiếm khách hàng";
+            Load += frmtimkiemkh_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
