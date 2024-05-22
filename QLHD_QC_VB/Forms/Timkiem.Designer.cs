@@ -87,6 +87,7 @@
             btntimlai.TabIndex = 4;
             btntimlai.Text = "Tìm lại";
             btntimlai.UseVisualStyleBackColor = true;
+            btntimlai.Click += btntimlai_Click;
             // 
             // btndong
             // 
@@ -96,6 +97,7 @@
             btndong.TabIndex = 5;
             btndong.Text = "Đóng";
             btndong.UseVisualStyleBackColor = true;
+            btndong.Click += btndong_Click;
             // 
             // lblmakh
             // 
