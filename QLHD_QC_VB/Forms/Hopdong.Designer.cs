@@ -80,6 +80,7 @@
             btndong.TabIndex = 76;
             btndong.Text = "Đóng";
             btndong.UseVisualStyleBackColor = true;
+            btndong.Click += btndong_Click;
             // 
             // btnxuathopdong
             // 

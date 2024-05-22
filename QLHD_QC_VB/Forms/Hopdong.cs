@@ -25,7 +25,7 @@ namespace QLHD_QC_VB.Forms
             cbomakh.Text = "";
             cbomanv.Text = "";
         }
-        string makh ="";
+        string makh = "";
         public void GetValue(string value)
         {
             makh = value;
@@ -55,7 +55,7 @@ namespace QLHD_QC_VB.Forms
         private void load_data()
         {
             string sql;
-            if(makh == "")
+            if (makh == "")
             {
                 sql = "select a.mavb as mahd,a.manv,a.makh,ngayky,coalesce(sum(nhuanbut),0) as tongtien from vietbai a full join chitietvietbai b on a.mavb=b.mavb " +
                     "group by a.mavb,a.manv,a.makh,ngayky " +
@@ -71,7 +71,7 @@ namespace QLHD_QC_VB.Forms
                     "group by a.mavb,a.manv,a.makh,ngayky " +
                     "union " +
                     "select a.maqc as mahd,manv,makh,ngayky,coalesce(sum(dongia * abs(datediff(day,ngaykt,ngaybd))),0) as tongtien " +
-                    "from quangcao a full join chitietquangcao b on a.maqc=b.maqc " + "where a.makh = '" + makh + "' "+ 
+                    "from quangcao a full join chitietquangcao b on a.maqc=b.maqc " + "where a.makh = '" + makh + "' " +
                     "group by a.maqc,manv,makh,ngayky";
             }
             tblhopdong = Class.Functions.GetDataToTable(sql);
@@ -129,11 +129,13 @@ namespace QLHD_QC_VB.Forms
             if (txtmahd.Text.Substring(0, 2) == "VB")
             {
                 a.GetValue(txtmahd.Text);
+                a.StartPosition = FormStartPosition.CenterScreen;
                 a.Show();
             }
             else
             {
                 b.GetValue(txtmahd.Text);
+                b.StartPosition = FormStartPosition.CenterScreen;
                 b.Show();
             }
         }
@@ -588,6 +590,14 @@ namespace QLHD_QC_VB.Forms
             exRange.Range["A3:C3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
             exRange.Range["A3:C3"].Value = txttennv.Text;
             exApp.Visible = true;
+        }
+
+        private void btndong_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Bạn muốn đóng chương trình?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

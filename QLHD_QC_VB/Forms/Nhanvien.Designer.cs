@@ -76,99 +76,99 @@
             lblmanv.AutoSize = true;
             lblmanv.Location = new Point(54, 63);
             lblmanv.Name = "lblmanv";
-            lblmanv.Size = new Size(97, 20);
+            lblmanv.Size = new Size(100, 20);
             lblmanv.TabIndex = 1;
-            lblmanv.Text = "Mã nhân viên";
+            lblmanv.Text = "Mã nhân viên:";
             // 
             // lbltennv
             // 
             lbltennv.AutoSize = true;
             lbltennv.Location = new Point(52, 120);
             lbltennv.Name = "lbltennv";
-            lbltennv.Size = new Size(99, 20);
+            lbltennv.Size = new Size(102, 20);
             lbltennv.TabIndex = 2;
-            lbltennv.Text = "Tên nhân viên";
+            lbltennv.Text = "Tên nhân viên:";
             // 
             // lblgioitinh
             // 
             lblgioitinh.AutoSize = true;
             lblgioitinh.Location = new Point(52, 231);
             lblgioitinh.Name = "lblgioitinh";
-            lblgioitinh.Size = new Size(65, 20);
+            lblgioitinh.Size = new Size(68, 20);
             lblgioitinh.TabIndex = 3;
-            lblgioitinh.Text = "Giới tính";
+            lblgioitinh.Text = "Giới tính:";
             // 
             // lbldiachi
             // 
             lbldiachi.AutoSize = true;
             lbldiachi.Location = new Point(52, 180);
             lbldiachi.Name = "lbldiachi";
-            lbldiachi.Size = new Size(55, 20);
+            lbldiachi.Size = new Size(58, 20);
             lbldiachi.TabIndex = 4;
-            lbldiachi.Text = "Địa chỉ";
+            lbldiachi.Text = "Địa chỉ:";
             // 
             // lbldienthoai
             // 
             lbldienthoai.AutoSize = true;
             lbldienthoai.Location = new Point(401, 63);
             lbldienthoai.Name = "lbldienthoai";
-            lbldienthoai.Size = new Size(78, 20);
+            lbldienthoai.Size = new Size(81, 20);
             lbldienthoai.TabIndex = 5;
-            lbldienthoai.Text = "Điện thoại";
+            lbldienthoai.Text = "Điện thoại:";
             // 
             // lblemail
             // 
             lblemail.AutoSize = true;
             lblemail.Location = new Point(401, 180);
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(46, 20);
+            lblemail.Size = new Size(49, 20);
             lblemail.TabIndex = 6;
-            lblemail.Text = "Email";
+            lblemail.Text = "Email:";
             // 
             // lblngaysinh
             // 
             lblngaysinh.AutoSize = true;
             lblngaysinh.Location = new Point(401, 120);
             lblngaysinh.Name = "lblngaysinh";
-            lblngaysinh.Size = new Size(74, 20);
+            lblngaysinh.Size = new Size(77, 20);
             lblngaysinh.TabIndex = 7;
-            lblngaysinh.Text = "Ngày sinh";
+            lblngaysinh.Text = "Ngày sinh:";
             // 
             // lblchuyenmon
             // 
             lblchuyenmon.AutoSize = true;
             lblchuyenmon.Location = new Point(738, 63);
             lblchuyenmon.Name = "lblchuyenmon";
-            lblchuyenmon.Size = new Size(91, 20);
+            lblchuyenmon.Size = new Size(94, 20);
             lblchuyenmon.TabIndex = 8;
-            lblchuyenmon.Text = "Chuyên môn";
+            lblchuyenmon.Text = "Chuyên môn:";
             // 
             // lbltrinhdo
             // 
             lbltrinhdo.AutoSize = true;
             lbltrinhdo.Location = new Point(736, 180);
             lbltrinhdo.Name = "lbltrinhdo";
-            lbltrinhdo.Size = new Size(63, 20);
+            lbltrinhdo.Size = new Size(66, 20);
             lbltrinhdo.TabIndex = 9;
-            lbltrinhdo.Text = "Trình độ";
+            lbltrinhdo.Text = "Trình độ:";
             // 
             // lblchucvu
             // 
             lblchucvu.AutoSize = true;
             lblchucvu.Location = new Point(738, 231);
             lblchucvu.Name = "lblchucvu";
-            lblchucvu.Size = new Size(61, 20);
+            lblchucvu.Size = new Size(64, 20);
             lblchucvu.TabIndex = 10;
-            lblchucvu.Text = "Chức vụ";
+            lblchucvu.Text = "Chức vụ:";
             // 
             // lblphongban
             // 
             lblphongban.AutoSize = true;
             lblphongban.Location = new Point(738, 120);
             lblphongban.Name = "lblphongban";
-            lblphongban.Size = new Size(80, 20);
+            lblphongban.Size = new Size(83, 20);
             lblphongban.TabIndex = 11;
-            lblphongban.Text = "Phòng ban";
+            lblphongban.Text = "Phòng ban:";
             // 
             // DataGridView
             // 

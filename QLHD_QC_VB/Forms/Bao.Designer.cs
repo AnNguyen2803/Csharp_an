@@ -64,45 +64,45 @@
             lblmabao.AutoSize = true;
             lblmabao.Location = new Point(74, 70);
             lblmabao.Name = "lblmabao";
-            lblmabao.Size = new Size(60, 20);
+            lblmabao.Size = new Size(63, 20);
             lblmabao.TabIndex = 1;
-            lblmabao.Text = "Mã báo";
+            lblmabao.Text = "Mã báo:";
             // 
             // lbltenbao
             // 
             lbltenbao.AutoSize = true;
             lbltenbao.Location = new Point(74, 126);
             lbltenbao.Name = "lbltenbao";
-            lbltenbao.Size = new Size(62, 20);
+            lbltenbao.Size = new Size(65, 20);
             lbltenbao.TabIndex = 2;
-            lbltenbao.Text = "Tên báo";
+            lbltenbao.Text = "Tên báo:";
             // 
             // lbldiachi
             // 
             lbldiachi.AutoSize = true;
             lbldiachi.Location = new Point(74, 185);
             lbldiachi.Name = "lbldiachi";
-            lbldiachi.Size = new Size(55, 20);
+            lbldiachi.Size = new Size(58, 20);
             lbldiachi.TabIndex = 3;
-            lbldiachi.Text = "Địa chỉ";
+            lbldiachi.Text = "Địa chỉ:";
             // 
             // lbldienthoai
             // 
             lbldienthoai.AutoSize = true;
             lbldienthoai.Location = new Point(558, 70);
             lbldienthoai.Name = "lbldienthoai";
-            lbldienthoai.Size = new Size(78, 20);
+            lbldienthoai.Size = new Size(81, 20);
             lbldienthoai.TabIndex = 4;
-            lbldienthoai.Text = "Điện thoại";
+            lbldienthoai.Text = "Điện thoại:";
             // 
             // lblemail
             // 
             lblemail.AutoSize = true;
             lblemail.Location = new Point(558, 126);
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(46, 20);
+            lblemail.Size = new Size(49, 20);
             lblemail.TabIndex = 5;
-            lblemail.Text = "Email";
+            lblemail.Text = "Email:";
             // 
             // DataGridView
             // 

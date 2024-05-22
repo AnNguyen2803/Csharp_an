@@ -62,7 +62,7 @@
             // 
             // btntimkiem
             // 
-            btntimkiem.Location = new Point(228, 502);
+            btntimkiem.Location = new Point(220, 450);
             btntimkiem.Name = "btntimkiem";
             btntimkiem.Size = new Size(94, 29);
             btntimkiem.TabIndex = 2;
@@ -73,7 +73,7 @@
             // DataGridView
             // 
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(52, 154);
+            DataGridView.Location = new Point(51, 122);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
             DataGridView.Size = new Size(877, 307);
@@ -81,7 +81,7 @@
             // 
             // btntimlai
             // 
-            btntimlai.Location = new Point(442, 502);
+            btntimlai.Location = new Point(434, 450);
             btntimlai.Name = "btntimlai";
             btntimlai.Size = new Size(94, 29);
             btntimlai.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // btndong
             // 
-            btndong.Location = new Point(650, 502);
+            btndong.Location = new Point(642, 450);
             btndong.Name = "btndong";
             btndong.Size = new Size(94, 29);
             btndong.TabIndex = 5;
@@ -118,7 +118,7 @@
             // lbltenkh
             // 
             lbltenkh.AutoSize = true;
-            lbltenkh.Location = new Point(61, 99);
+            lbltenkh.Location = new Point(61, 79);
             lbltenkh.Name = "lbltenkh";
             lbltenkh.Size = new Size(114, 20);
             lbltenkh.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             // txttenkh
             // 
-            txttenkh.Location = new Point(206, 96);
+            txttenkh.Location = new Point(206, 76);
             txttenkh.Name = "txttenkh";
             txttenkh.Size = new Size(221, 27);
             txttenkh.TabIndex = 9;
@@ -134,7 +134,7 @@
             // lbldiachi
             // 
             lbldiachi.AutoSize = true;
-            lbldiachi.Location = new Point(507, 99);
+            lbldiachi.Location = new Point(507, 79);
             lbldiachi.Name = "lbldiachi";
             lbldiachi.Size = new Size(58, 20);
             lbldiachi.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // txtdiachi
             // 
-            txtdiachi.Location = new Point(625, 96);
+            txtdiachi.Location = new Point(625, 76);
             txtdiachi.Name = "txtdiachi";
             txtdiachi.Size = new Size(212, 27);
             txtdiachi.TabIndex = 11;
@@ -151,7 +151,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 554);
+            ClientSize = new Size(981, 496);
             Controls.Add(txtdiachi);
             Controls.Add(lbldiachi);
             Controls.Add(txttenkh);

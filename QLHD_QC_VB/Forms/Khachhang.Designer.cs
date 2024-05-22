@@ -66,54 +66,54 @@
             lblmakh.AutoSize = true;
             lblmakh.Location = new Point(63, 67);
             lblmakh.Name = "lblmakh";
-            lblmakh.Size = new Size(109, 20);
+            lblmakh.Size = new Size(112, 20);
             lblmakh.TabIndex = 1;
-            lblmakh.Text = "Mã khách hàng";
+            lblmakh.Text = "Mã khách hàng:";
             // 
             // lbltenkh
             // 
             lbltenkh.AutoSize = true;
             lbltenkh.Location = new Point(63, 125);
             lbltenkh.Name = "lbltenkh";
-            lbltenkh.Size = new Size(111, 20);
+            lbltenkh.Size = new Size(114, 20);
             lbltenkh.TabIndex = 2;
-            lbltenkh.Text = "Tên khách hàng";
+            lbltenkh.Text = "Tên khách hàng:";
             // 
             // lbllvhd
             // 
             lbllvhd.AutoSize = true;
             lbllvhd.Location = new Point(63, 187);
             lbllvhd.Name = "lbllvhd";
-            lbllvhd.Size = new Size(136, 20);
+            lbllvhd.Size = new Size(139, 20);
             lbllvhd.TabIndex = 3;
-            lbllvhd.Text = "Lĩnh vực hoạt động";
+            lbllvhd.Text = "Lĩnh vực hoạt động:";
             // 
             // lbldiachi
             // 
             lbldiachi.AutoSize = true;
             lbldiachi.Location = new Point(543, 67);
             lbldiachi.Name = "lbldiachi";
-            lbldiachi.Size = new Size(55, 20);
+            lbldiachi.Size = new Size(58, 20);
             lbldiachi.TabIndex = 4;
-            lbldiachi.Text = "Địa chỉ";
+            lbldiachi.Text = "Địa chỉ:";
             // 
             // lblemail
             // 
             lblemail.AutoSize = true;
             lblemail.Location = new Point(543, 125);
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(46, 20);
+            lblemail.Size = new Size(49, 20);
             lblemail.TabIndex = 5;
-            lblemail.Text = "Email";
+            lblemail.Text = "Email:";
             // 
             // lbldienthoai
             // 
             lbldienthoai.AutoSize = true;
             lbldienthoai.Location = new Point(543, 183);
             lbldienthoai.Name = "lbldienthoai";
-            lbldienthoai.Size = new Size(78, 20);
+            lbldienthoai.Size = new Size(81, 20);
             lbldienthoai.TabIndex = 6;
-            lbldienthoai.Text = "Điện thoại";
+            lbldienthoai.Text = "Điện thoại:";
             // 
             // txtmakh
             // 
