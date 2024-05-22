@@ -40,21 +40,15 @@ namespace QLHD_QC_VB.Forms
             a.Show();
         }
 
-        private void mnuhopdongquangcao_Click(object sender, EventArgs e)
-        {
-            frmhdquangcao a = new frmhdquangcao();
-            a.Show();
-        }
-
-        private void mnuhopdongvietbai_Click(object sender, EventArgs e)
-        {
-            frmhopdongvietbai a = new frmhopdongvietbai();
-            a.Show();
-        }
-
         private void mnutkkhachhang_Click(object sender, EventArgs e)
         {
             frmtimkiemkh a = new frmtimkiemkh();
+            a.Show();
+        }
+
+        private void mnuhopdong_Click(object sender, EventArgs e)
+        {
+            frmhopdong a = new frmhopdong();
             a.Show();
         }
     }

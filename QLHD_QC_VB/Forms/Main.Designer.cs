@@ -34,8 +34,6 @@
             mnukhachhang = new ToolStripMenuItem();
             mnubao = new ToolStripMenuItem();
             mnuhopdong = new ToolStripMenuItem();
-            mnuhopdongquangcao = new ToolStripMenuItem();
-            mnuhopdongvietbai = new ToolStripMenuItem();
             mnubaocao = new ToolStripMenuItem();
             mnutimkiem = new ToolStripMenuItem();
             mnutkkhachhang = new ToolStripMenuItem();
@@ -83,24 +81,10 @@
             // 
             // mnuhopdong
             // 
-            mnuhopdong.DropDownItems.AddRange(new ToolStripItem[] { mnuhopdongquangcao, mnuhopdongvietbai });
             mnuhopdong.Name = "mnuhopdong";
             mnuhopdong.Size = new Size(91, 24);
             mnuhopdong.Text = "Hợp đồng";
-            // 
-            // mnuhopdongquangcao
-            // 
-            mnuhopdongquangcao.Name = "mnuhopdongquangcao";
-            mnuhopdongquangcao.Size = new Size(236, 26);
-            mnuhopdongquangcao.Text = "Hợp đồng Quảng cáo";
-            mnuhopdongquangcao.Click += mnuhopdongquangcao_Click;
-            // 
-            // mnuhopdongvietbai
-            // 
-            mnuhopdongvietbai.Name = "mnuhopdongvietbai";
-            mnuhopdongvietbai.Size = new Size(236, 26);
-            mnuhopdongvietbai.Text = "Hợp đồng Viết bài";
-            mnuhopdongvietbai.Click += mnuhopdongvietbai_Click;
+            mnuhopdong.Click += mnuhopdong_Click;
             // 
             // mnubaocao
             // 
@@ -118,7 +102,7 @@
             // mnutkkhachhang
             // 
             mnutkkhachhang.Name = "mnutkkhachhang";
-            mnutkkhachhang.Size = new Size(224, 26);
+            mnutkkhachhang.Size = new Size(169, 26);
             mnutkkhachhang.Text = "Khách hàng";
             mnutkkhachhang.Click += mnutkkhachhang_Click;
             // 
@@ -152,8 +136,6 @@
         private ToolStripMenuItem mnukhachhang;
         private ToolStripMenuItem mnubao;
         private ToolStripMenuItem mnuhopdong;
-        private ToolStripMenuItem mnuhopdongquangcao;
-        private ToolStripMenuItem mnuhopdongvietbai;
         private ToolStripMenuItem mnubaocao;
         private ToolStripMenuItem mnutimkiem;
         private ToolStripMenuItem mnuthoat;
