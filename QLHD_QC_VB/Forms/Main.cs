@@ -25,35 +25,60 @@ namespace QLHD_QC_VB.Forms
         private void mnukhachhang_Click(object sender, EventArgs e)
         {
             frmkhachhang a = new frmkhachhang();
-            a.StartPosition = FormStartPosition.CenterScreen;
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
             a.Show();
         }
 
         private void mnunhanvien_Click(object sender, EventArgs e)
         {
             frmnhanvien a = new frmnhanvien();
-            a.StartPosition = FormStartPosition.CenterScreen;
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
             a.Show();
         }
 
         private void mnubao_Click(object sender, EventArgs e)
         {
             frmbao a = new frmbao();
-            a.StartPosition = FormStartPosition.CenterScreen;
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
             a.Show();
         }
 
         private void mnutkkhachhang_Click(object sender, EventArgs e)
         {
             frmtimkiemkh a = new frmtimkiemkh();
-            a.StartPosition = FormStartPosition.CenterScreen;
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
             a.Show();
         }
 
         private void mnuhopdong_Click(object sender, EventArgs e)
         {
             frmhopdong a = new frmhopdong();
-            a.StartPosition = FormStartPosition.CenterScreen;
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
             a.Show();
         }
 

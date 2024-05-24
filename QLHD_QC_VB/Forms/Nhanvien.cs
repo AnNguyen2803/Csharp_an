@@ -38,7 +38,7 @@ namespace QLHD_QC_VB.Forms
         private void load_data()
         {
             string sql;
-            sql = "select manv,tennv,gioitinh,diachi,dienthoai,email,ngaysinh,macm,matd,macv,mapb from nhanvien";
+            sql = "select manv,tennv,gioitinh,diachi,dienthoai,email,ngaysinh from nhanvien";
             tblnhanvien = Class.Functions.GetDataToTable(sql);
             DataGridView.DataSource = tblnhanvien;
             DataGridView.Columns[0].HeaderText = "Mã nhân viên";
@@ -48,21 +48,21 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[4].HeaderText = "Điện thoại";
             DataGridView.Columns[5].HeaderText = "Email";
             DataGridView.Columns[6].HeaderText = "Ngày sinh";
-            DataGridView.Columns[7].HeaderText = "Mã chuyên môn";
-            DataGridView.Columns[8].HeaderText = "Mã trình độ";
-            DataGridView.Columns[9].HeaderText = "Mã chức vụ";
-            DataGridView.Columns[10].HeaderText = "Mã phòng ban";
+            //DataGridView.Columns[7].HeaderText = "Mã chuyên môn";
+            //DataGridView.Columns[8].HeaderText = "Mã trình độ";
+            //DataGridView.Columns[9].HeaderText = "Mã chức vụ";
+            //DataGridView.Columns[10].HeaderText = "Mã phòng ban";
             DataGridView.Columns[0].Width = 150;
             DataGridView.Columns[1].Width = 150;
-            DataGridView.Columns[2].Width = 125;
+            DataGridView.Columns[2].Width = 75;
             DataGridView.Columns[3].Width = 200;
             DataGridView.Columns[4].Width = 125;
-            DataGridView.Columns[5].Width = 100;
+            DataGridView.Columns[5].Width = 130;
             DataGridView.Columns[6].Width = 120;
-            DataGridView.Columns[7].Width = 150;
-            DataGridView.Columns[8].Width = 150;
-            DataGridView.Columns[9].Width = 150;
-            DataGridView.Columns[10].Width = 150;
+            //DataGridView.Columns[7].Width = 150;
+            //DataGridView.Columns[8].Width = 150;
+            //DataGridView.Columns[9].Width = 150;
+            //DataGridView.Columns[10].Width = 150;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -125,13 +125,13 @@ namespace QLHD_QC_VB.Forms
             mskdienthoai.Text = DataGridView.CurrentRow.Cells["dienthoai"].Value.ToString();
             mskngaysinh.Text = DataGridView.CurrentRow.Cells["ngaysinh"].Value.ToString();
             string macm, matd, macv, mapb;
-            macm = DataGridView.CurrentRow.Cells["macm"].Value.ToString();
+            macm = Class.Functions.GetFieldValues("select macm from nhanvien where manv = '" + txtmanv.Text + "'");
             cbochuyenmon.Text = Class.Functions.GetFieldValues("select chuyenmon from chuyenmon where macm = '" + macm + "'");
-            matd = DataGridView.CurrentRow.Cells["matd"].Value.ToString();
+            matd = Class.Functions.GetFieldValues("select matd from nhanvien where manv = '" + txtmanv.Text + "'");
             cbotrinhdo.Text = Class.Functions.GetFieldValues("select trinhdo from trinhdo where matd = '" + matd + "'");
-            macv = DataGridView.CurrentRow.Cells["macv"].Value.ToString();
+            macv = Class.Functions.GetFieldValues("select macv from nhanvien where manv = '" + txtmanv.Text + "'");
             cbochucvu.Text = Class.Functions.GetFieldValues("select chucvu from chucvu where macv = '" + macv + "'");
-            mapb = DataGridView.CurrentRow.Cells["mapb"].Value.ToString();
+            mapb = Class.Functions.GetFieldValues("select mapb from nhanvien where manv = '" + txtmanv.Text + "'");
             cbophongban.Text = Class.Functions.GetFieldValues("select phongban from phongban where mapb = '" + mapb + "'");
             btnsua.Enabled = true;
             btnxoa.Enabled = true;

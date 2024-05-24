@@ -45,8 +45,9 @@
             // 
             // lbllvhd
             // 
+            lbllvhd.Anchor = AnchorStyles.Top;
             lbllvhd.AutoSize = true;
-            lbllvhd.Location = new Point(61, 29);
+            lbllvhd.Location = new Point(54, 29);
             lbllvhd.Name = "lbllvhd";
             lbllvhd.Size = new Size(139, 20);
             lbllvhd.TabIndex = 0;
@@ -54,15 +55,17 @@
             // 
             // cbolvhd
             // 
+            cbolvhd.Anchor = AnchorStyles.Top;
             cbolvhd.FormattingEnabled = true;
-            cbolvhd.Location = new Point(206, 25);
+            cbolvhd.Location = new Point(199, 26);
             cbolvhd.Name = "cbolvhd";
             cbolvhd.Size = new Size(221, 28);
             cbolvhd.TabIndex = 1;
             // 
             // btntimkiem
             // 
-            btntimkiem.Location = new Point(220, 450);
+            btntimkiem.Anchor = AnchorStyles.Bottom;
+            btntimkiem.Location = new Point(162, 447);
             btntimkiem.Name = "btntimkiem";
             btntimkiem.Size = new Size(94, 29);
             btntimkiem.TabIndex = 2;
@@ -72,16 +75,18 @@
             // 
             // DataGridView
             // 
+            DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(51, 122);
+            DataGridView.Location = new Point(54, 129);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
-            DataGridView.Size = new Size(877, 307);
+            DataGridView.Size = new Size(755, 298);
             DataGridView.TabIndex = 3;
             // 
             // btntimlai
             // 
-            btntimlai.Location = new Point(434, 450);
+            btntimlai.Anchor = AnchorStyles.Bottom;
+            btntimlai.Location = new Point(364, 447);
             btntimlai.Name = "btntimlai";
             btntimlai.Size = new Size(94, 29);
             btntimlai.TabIndex = 4;
@@ -91,7 +96,8 @@
             // 
             // btndong
             // 
-            btndong.Location = new Point(642, 450);
+            btndong.Anchor = AnchorStyles.Bottom;
+            btndong.Location = new Point(574, 447);
             btndong.Name = "btndong";
             btndong.Size = new Size(94, 29);
             btndong.TabIndex = 5;
@@ -101,8 +107,9 @@
             // 
             // lblmakh
             // 
+            lblmakh.Anchor = AnchorStyles.Top;
             lblmakh.AutoSize = true;
-            lblmakh.Location = new Point(507, 29);
+            lblmakh.Location = new Point(54, 75);
             lblmakh.Name = "lblmakh";
             lblmakh.Size = new Size(112, 20);
             lblmakh.TabIndex = 6;
@@ -110,15 +117,17 @@
             // 
             // txtmakh
             // 
-            txtmakh.Location = new Point(625, 25);
+            txtmakh.Anchor = AnchorStyles.Top;
+            txtmakh.Location = new Point(588, 72);
             txtmakh.Name = "txtmakh";
-            txtmakh.Size = new Size(212, 27);
+            txtmakh.Size = new Size(221, 27);
             txtmakh.TabIndex = 7;
             // 
             // lbltenkh
             // 
+            lbltenkh.Anchor = AnchorStyles.Top;
             lbltenkh.AutoSize = true;
-            lbltenkh.Location = new Point(61, 79);
+            lbltenkh.Location = new Point(468, 29);
             lbltenkh.Name = "lbltenkh";
             lbltenkh.Size = new Size(114, 20);
             lbltenkh.TabIndex = 8;
@@ -126,15 +135,17 @@
             // 
             // txttenkh
             // 
-            txttenkh.Location = new Point(206, 76);
+            txttenkh.Anchor = AnchorStyles.Top;
+            txttenkh.Location = new Point(199, 72);
             txttenkh.Name = "txttenkh";
             txttenkh.Size = new Size(221, 27);
             txttenkh.TabIndex = 9;
             // 
             // lbldiachi
             // 
+            lbldiachi.Anchor = AnchorStyles.Top;
             lbldiachi.AutoSize = true;
-            lbldiachi.Location = new Point(507, 79);
+            lbldiachi.Location = new Point(468, 75);
             lbldiachi.Name = "lbldiachi";
             lbldiachi.Size = new Size(58, 20);
             lbldiachi.TabIndex = 10;
@@ -142,16 +153,17 @@
             // 
             // txtdiachi
             // 
-            txtdiachi.Location = new Point(625, 76);
+            txtdiachi.Anchor = AnchorStyles.Top;
+            txtdiachi.Location = new Point(588, 26);
             txtdiachi.Name = "txtdiachi";
-            txtdiachi.Size = new Size(212, 27);
+            txtdiachi.Size = new Size(221, 27);
             txtdiachi.TabIndex = 11;
             // 
             // frmtimkiemkh
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 496);
+            ClientSize = new Size(862, 498);
             Controls.Add(txtdiachi);
             Controls.Add(lbldiachi);
             Controls.Add(txttenkh);

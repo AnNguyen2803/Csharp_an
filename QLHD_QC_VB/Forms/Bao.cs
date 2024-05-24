@@ -46,10 +46,10 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[3].HeaderText = "Số điện thoại";
             DataGridView.Columns[4].HeaderText = "Email";
             DataGridView.Columns[0].Width = 75;
-            DataGridView.Columns[1].Width = 150;
+            DataGridView.Columns[1].Width = 175;
             DataGridView.Columns[2].Width = 400;
             DataGridView.Columns[3].Width = 100;
-            DataGridView.Columns[4].Width = 150;
+            DataGridView.Columns[4].Width = 200;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }

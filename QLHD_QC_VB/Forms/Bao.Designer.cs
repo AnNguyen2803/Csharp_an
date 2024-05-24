@@ -51,6 +51,7 @@
             // 
             // lbldmbao
             // 
+            lbldmbao.Anchor = AnchorStyles.Top;
             lbldmbao.AutoSize = true;
             lbldmbao.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lbldmbao.Location = new Point(406, 9);
@@ -61,6 +62,7 @@
             // 
             // lblmabao
             // 
+            lblmabao.Anchor = AnchorStyles.Top;
             lblmabao.AutoSize = true;
             lblmabao.Location = new Point(74, 70);
             lblmabao.Name = "lblmabao";
@@ -70,6 +72,7 @@
             // 
             // lbltenbao
             // 
+            lbltenbao.Anchor = AnchorStyles.Top;
             lbltenbao.AutoSize = true;
             lbltenbao.Location = new Point(74, 126);
             lbltenbao.Name = "lbltenbao";
@@ -79,6 +82,7 @@
             // 
             // lbldiachi
             // 
+            lbldiachi.Anchor = AnchorStyles.Top;
             lbldiachi.AutoSize = true;
             lbldiachi.Location = new Point(74, 185);
             lbldiachi.Name = "lbldiachi";
@@ -88,6 +92,7 @@
             // 
             // lbldienthoai
             // 
+            lbldienthoai.Anchor = AnchorStyles.Top;
             lbldienthoai.AutoSize = true;
             lbldienthoai.Location = new Point(558, 70);
             lbldienthoai.Name = "lbldienthoai";
@@ -97,6 +102,7 @@
             // 
             // lblemail
             // 
+            lblemail.Anchor = AnchorStyles.Top;
             lblemail.AutoSize = true;
             lblemail.Location = new Point(558, 126);
             lblemail.Name = "lblemail";
@@ -106,6 +112,7 @@
             // 
             // DataGridView
             // 
+            DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridView.Location = new Point(43, 225);
             DataGridView.Name = "DataGridView";
@@ -116,6 +123,7 @@
             // 
             // btnthemmoi
             // 
+            btnthemmoi.Anchor = AnchorStyles.Bottom;
             btnthemmoi.Location = new Point(73, 543);
             btnthemmoi.Name = "btnthemmoi";
             btnthemmoi.Size = new Size(94, 29);
@@ -127,6 +135,7 @@
             // 
             // btnsua
             // 
+            btnsua.Anchor = AnchorStyles.Bottom;
             btnsua.Location = new Point(223, 543);
             btnsua.Name = "btnsua";
             btnsua.Size = new Size(94, 29);
@@ -137,6 +146,7 @@
             // 
             // btnxoa
             // 
+            btnxoa.Anchor = AnchorStyles.Bottom;
             btnxoa.Location = new Point(381, 543);
             btnxoa.Name = "btnxoa";
             btnxoa.Size = new Size(94, 29);
@@ -147,6 +157,7 @@
             // 
             // btnluu
             // 
+            btnluu.Anchor = AnchorStyles.Bottom;
             btnluu.Location = new Point(539, 543);
             btnluu.Name = "btnluu";
             btnluu.Size = new Size(94, 29);
@@ -157,6 +168,7 @@
             // 
             // btnlammoi
             // 
+            btnlammoi.Anchor = AnchorStyles.Bottom;
             btnlammoi.Location = new Point(692, 543);
             btnlammoi.Name = "btnlammoi";
             btnlammoi.Size = new Size(94, 29);
@@ -167,6 +179,7 @@
             // 
             // btndong
             // 
+            btndong.Anchor = AnchorStyles.Bottom;
             btndong.Location = new Point(841, 543);
             btndong.Name = "btndong";
             btndong.Size = new Size(94, 29);
@@ -177,6 +190,7 @@
             // 
             // txttenbao
             // 
+            txttenbao.Anchor = AnchorStyles.Top;
             txttenbao.Location = new Point(142, 123);
             txttenbao.Name = "txttenbao";
             txttenbao.Size = new Size(308, 27);
@@ -184,6 +198,7 @@
             // 
             // txtdiachi
             // 
+            txtdiachi.Anchor = AnchorStyles.Top;
             txtdiachi.Location = new Point(142, 182);
             txtdiachi.Name = "txtdiachi";
             txtdiachi.Size = new Size(765, 27);
@@ -191,6 +206,7 @@
             // 
             // txtmabao
             // 
+            txtmabao.Anchor = AnchorStyles.Top;
             txtmabao.Location = new Point(142, 67);
             txtmabao.Name = "txtmabao";
             txtmabao.Size = new Size(308, 27);
@@ -198,6 +214,7 @@
             // 
             // mskdienthoai
             // 
+            mskdienthoai.Anchor = AnchorStyles.Top;
             mskdienthoai.Location = new Point(642, 67);
             mskdienthoai.Mask = "(999) 000-0000";
             mskdienthoai.Name = "mskdienthoai";
@@ -206,6 +223,7 @@
             // 
             // txtemail
             // 
+            txtemail.Anchor = AnchorStyles.Top;
             txtemail.Location = new Point(642, 123);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(265, 27);

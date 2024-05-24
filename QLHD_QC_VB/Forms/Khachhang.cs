@@ -55,7 +55,7 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[2].Width = 125;
             DataGridView.Columns[3].Width = 225;
             DataGridView.Columns[4].Width = 150;
-            DataGridView.Columns[5].Width = 100;
+            DataGridView.Columns[5].Width = 175;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }

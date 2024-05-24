@@ -63,10 +63,11 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(62, 465);
+            label1.Location = new Point(141, 466);
             label1.Name = "label1";
             label1.Size = new Size(199, 17);
             label1.TabIndex = 77;
@@ -74,6 +75,7 @@
             // 
             // btndong
             // 
+            btndong.Anchor = AnchorStyles.Bottom;
             btndong.Location = new Point(713, 543);
             btndong.Name = "btndong";
             btndong.Size = new Size(87, 29);
@@ -84,6 +86,7 @@
             // 
             // btnxuathopdong
             // 
+            btnxuathopdong.Anchor = AnchorStyles.Bottom;
             btnxuathopdong.Location = new Point(505, 547);
             btnxuathopdong.Name = "btnxuathopdong";
             btnxuathopdong.Size = new Size(123, 29);
@@ -94,6 +97,7 @@
             // 
             // btntimkiem
             // 
+            btntimkiem.Anchor = AnchorStyles.Bottom;
             btntimkiem.Location = new Point(342, 546);
             btntimkiem.Name = "btntimkiem";
             btntimkiem.Size = new Size(87, 29);
@@ -104,6 +108,7 @@
             // 
             // cbotkmahd
             // 
+            cbotkmahd.Anchor = AnchorStyles.Bottom;
             cbotkmahd.FormattingEnabled = true;
             cbotkmahd.Location = new Point(141, 547);
             cbotkmahd.Name = "cbotkmahd";
@@ -112,6 +117,7 @@
             // 
             // lblmahd
             // 
+            lblmahd.Anchor = AnchorStyles.Bottom;
             lblmahd.AutoSize = true;
             lblmahd.Location = new Point(28, 550);
             lblmahd.Name = "lblmahd";
@@ -121,6 +127,7 @@
             // 
             // btnlammoi
             // 
+            btnlammoi.Anchor = AnchorStyles.Bottom;
             btnlammoi.Location = new Point(713, 493);
             btnlammoi.Name = "btnlammoi";
             btnlammoi.Size = new Size(87, 29);
@@ -131,6 +138,7 @@
             // 
             // btnluu
             // 
+            btnluu.Anchor = AnchorStyles.Bottom;
             btnluu.Location = new Point(536, 493);
             btnluu.Name = "btnluu";
             btnluu.Size = new Size(70, 29);
@@ -141,6 +149,7 @@
             // 
             // btnsua
             // 
+            btnsua.Anchor = AnchorStyles.Bottom;
             btnsua.Location = new Point(625, 493);
             btnsua.Name = "btnsua";
             btnsua.Size = new Size(70, 29);
@@ -151,6 +160,7 @@
             // 
             // btnhuy
             // 
+            btnhuy.Anchor = AnchorStyles.Bottom;
             btnhuy.Location = new Point(394, 493);
             btnhuy.Name = "btnhuy";
             btnhuy.Size = new Size(123, 29);
@@ -161,6 +171,7 @@
             // 
             // btnthemhdqc
             // 
+            btnthemhdqc.Anchor = AnchorStyles.Bottom;
             btnthemhdqc.Location = new Point(62, 493);
             btnthemhdqc.Name = "btnthemhdqc";
             btnthemhdqc.Size = new Size(150, 29);
@@ -171,17 +182,19 @@
             // 
             // DataGridView
             // 
+            DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(62, 237);
+            DataGridView.Location = new Point(141, 237);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
-            DataGridView.Size = new Size(738, 218);
+            DataGridView.Size = new Size(563, 218);
             DataGridView.TabIndex = 66;
             DataGridView.Click += DataGridView_Click;
             DataGridView.DoubleClick += DataGridView_DoubleClick;
             // 
             // mskdienthoai
             // 
+            mskdienthoai.Anchor = AnchorStyles.Top;
             mskdienthoai.Location = new Point(623, 194);
             mskdienthoai.Mask = "(999) 000-0000";
             mskdienthoai.Name = "mskdienthoai";
@@ -190,6 +203,7 @@
             // 
             // txtdiachi
             // 
+            txtdiachi.Anchor = AnchorStyles.Top;
             txtdiachi.Location = new Point(623, 151);
             txtdiachi.Name = "txtdiachi";
             txtdiachi.Size = new Size(177, 27);
@@ -197,6 +211,7 @@
             // 
             // txttenkh
             // 
+            txttenkh.Anchor = AnchorStyles.Top;
             txttenkh.Location = new Point(623, 107);
             txttenkh.Name = "txttenkh";
             txttenkh.Size = new Size(177, 27);
@@ -204,6 +219,7 @@
             // 
             // cbomakh
             // 
+            cbomakh.Anchor = AnchorStyles.Top;
             cbomakh.FormattingEnabled = true;
             cbomakh.Location = new Point(623, 64);
             cbomakh.Name = "cbomakh";
@@ -213,6 +229,7 @@
             // 
             // lbldienthoai
             // 
+            lbldienthoai.Anchor = AnchorStyles.Top;
             lbldienthoai.AutoSize = true;
             lbldienthoai.Location = new Point(505, 197);
             lbldienthoai.Name = "lbldienthoai";
@@ -222,6 +239,7 @@
             // 
             // lbldiachi
             // 
+            lbldiachi.Anchor = AnchorStyles.Top;
             lbldiachi.AutoSize = true;
             lbldiachi.Location = new Point(505, 154);
             lbldiachi.Name = "lbldiachi";
@@ -231,6 +249,7 @@
             // 
             // lbltenkh
             // 
+            lbltenkh.Anchor = AnchorStyles.Top;
             lbltenkh.AutoSize = true;
             lbltenkh.Location = new Point(505, 110);
             lbltenkh.Name = "lbltenkh";
@@ -240,6 +259,7 @@
             // 
             // lblmakh
             // 
+            lblmakh.Anchor = AnchorStyles.Top;
             lblmakh.AutoSize = true;
             lblmakh.Location = new Point(505, 67);
             lblmakh.Name = "lblmakh";
@@ -249,15 +269,17 @@
             // 
             // txttennv
             // 
-            txttennv.Location = new Point(175, 194);
+            txttennv.Anchor = AnchorStyles.Top;
+            txttennv.Location = new Point(176, 194);
             txttennv.Name = "txttennv";
             txttennv.Size = new Size(183, 27);
             txttennv.TabIndex = 57;
             // 
             // cbomanv
             // 
+            cbomanv.Anchor = AnchorStyles.Top;
             cbomanv.FormattingEnabled = true;
-            cbomanv.Location = new Point(175, 151);
+            cbomanv.Location = new Point(176, 151);
             cbomanv.Name = "cbomanv";
             cbomanv.Size = new Size(183, 28);
             cbomanv.TabIndex = 56;
@@ -265,7 +287,8 @@
             // 
             // mskngayky
             // 
-            mskngayky.Location = new Point(175, 107);
+            mskngayky.Anchor = AnchorStyles.Top;
+            mskngayky.Location = new Point(176, 107);
             mskngayky.Mask = "00/00/0000";
             mskngayky.Name = "mskngayky";
             mskngayky.Size = new Size(183, 27);
@@ -274,13 +297,15 @@
             // 
             // txtmahd
             // 
-            txtmahd.Location = new Point(175, 64);
+            txtmahd.Anchor = AnchorStyles.Top;
+            txtmahd.Location = new Point(176, 64);
             txtmahd.Name = "txtmahd";
             txtmahd.Size = new Size(183, 27);
             txtmahd.TabIndex = 54;
             // 
             // lbltennv
             // 
+            lbltennv.Anchor = AnchorStyles.Top;
             lbltennv.AutoSize = true;
             lbltennv.Location = new Point(62, 197);
             lbltennv.Name = "lbltennv";
@@ -290,6 +315,7 @@
             // 
             // lblmanv
             // 
+            lblmanv.Anchor = AnchorStyles.Top;
             lblmanv.AutoSize = true;
             lblmanv.Location = new Point(62, 154);
             lblmanv.Name = "lblmanv";
@@ -299,6 +325,7 @@
             // 
             // lblngayky
             // 
+            lblngayky.Anchor = AnchorStyles.Top;
             lblngayky.AutoSize = true;
             lblngayky.Location = new Point(62, 110);
             lblngayky.Name = "lblngayky";
@@ -308,9 +335,10 @@
             // 
             // lblHD
             // 
+            lblHD.Anchor = AnchorStyles.Top;
             lblHD.AutoSize = true;
             lblHD.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblHD.Location = new Point(342, 9);
+            lblHD.Location = new Point(353, 9);
             lblHD.Name = "lblHD";
             lblHD.Size = new Size(164, 38);
             lblHD.TabIndex = 50;
@@ -318,6 +346,7 @@
             // 
             // lblmaquangcao
             // 
+            lblmaquangcao.Anchor = AnchorStyles.Top;
             lblmaquangcao.AutoSize = true;
             lblmaquangcao.Location = new Point(62, 67);
             lblmaquangcao.Name = "lblmaquangcao";
@@ -327,6 +356,7 @@
             // 
             // btnthemhdvb
             // 
+            btnthemhdvb.Anchor = AnchorStyles.Bottom;
             btnthemhdvb.Location = new Point(227, 493);
             btnthemhdvb.Name = "btnthemhdvb";
             btnthemhdvb.Size = new Size(150, 29);

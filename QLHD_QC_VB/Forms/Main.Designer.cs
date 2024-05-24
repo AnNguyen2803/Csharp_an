@@ -38,7 +38,7 @@
             mnutimkiem = new ToolStripMenuItem();
             mnutkkhachhang = new ToolStripMenuItem();
             mnuthoat = new ToolStripMenuItem();
-            lblnoidung = new Label();
+            pnlcontent = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnudanhmuc, mnuhopdong, mnubaocao, mnutimkiem, mnuthoat });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(926, 28);
+            menuStrip1.Size = new Size(1082, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -63,21 +63,21 @@
             // mnunhanvien
             // 
             mnunhanvien.Name = "mnunhanvien";
-            mnunhanvien.Size = new Size(224, 26);
+            mnunhanvien.Size = new Size(169, 26);
             mnunhanvien.Text = "Nhân viên";
             mnunhanvien.Click += mnunhanvien_Click;
             // 
             // mnukhachhang
             // 
             mnukhachhang.Name = "mnukhachhang";
-            mnukhachhang.Size = new Size(224, 26);
+            mnukhachhang.Size = new Size(169, 26);
             mnukhachhang.Text = "Khách hàng";
             mnukhachhang.Click += mnukhachhang_Click;
             // 
             // mnubao
             // 
             mnubao.Name = "mnubao";
-            mnubao.Size = new Size(224, 26);
+            mnubao.Size = new Size(169, 26);
             mnubao.Text = "Báo";
             mnubao.Click += mnubao_Click;
             // 
@@ -115,23 +115,21 @@
             mnuthoat.Text = "Thoát";
             mnuthoat.Click += mnuthoat_Click;
             // 
-            // lblnoidung
+            // pnlcontent
             // 
-            lblnoidung.AutoSize = true;
-            lblnoidung.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblnoidung.Location = new Point(137, 225);
-            lblnoidung.Name = "lblnoidung";
-            lblnoidung.Size = new Size(621, 46);
-            lblnoidung.TabIndex = 1;
-            lblnoidung.Text = "Quản lý Hợp đồng Quảng cáo và Viết bài";
+            pnlcontent.Dock = DockStyle.Fill;
+            pnlcontent.Location = new Point(0, 28);
+            pnlcontent.Name = "pnlcontent";
+            pnlcontent.Size = new Size(1082, 625);
+            pnlcontent.TabIndex = 1;
             // 
             // frmQLHD
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(926, 522);
-            Controls.Add(lblnoidung);
+            ClientSize = new Size(1082, 653);
+            Controls.Add(pnlcontent);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmQLHD";
@@ -156,6 +154,6 @@
         private ToolStripMenuItem mnutimkiem;
         private ToolStripMenuItem mnuthoat;
         private ToolStripMenuItem mnutkkhachhang;
-        private Label lblnoidung;
+        private Panel pnlcontent;
     }
 }
