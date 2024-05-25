@@ -176,6 +176,7 @@
             Controls.Add(btntimkiem);
             Controls.Add(cbolvhd);
             Controls.Add(lbllvhd);
+            DoubleBuffered = true;
             Name = "frmtimkiemkh";
             Text = "Tìm kiếm khách hàng";
             Load += frmtimkiemkh_Load;

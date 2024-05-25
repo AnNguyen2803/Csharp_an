@@ -122,7 +122,7 @@
             // 
             pnlcontent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlcontent.BackColor = Color.FromArgb(250, 248, 238);
-            pnlcontent.BackgroundImage = Properties.Resources.Background_Main;
+            //pnlcontent.BackgroundImage = Properties.Resources.Background_Main;
             pnlcontent.BackgroundImageLayout = ImageLayout.Stretch;
             pnlcontent.BorderStyle = BorderStyle.FixedSingle;
             pnlcontent.Location = new Point(0, 28);
