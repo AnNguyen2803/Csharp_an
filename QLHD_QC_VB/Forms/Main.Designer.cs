@@ -44,7 +44,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.Silver;
+            menuStrip1.BackColor = Color.FromArgb(240, 228, 211);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnudanhmuc, mnuhopdong, mnubaocao, mnutimkiem, mnuthoat });
             menuStrip1.Location = new Point(0, 0);
@@ -62,6 +62,7 @@
             // 
             // mnunhanvien
             // 
+            mnunhanvien.BackColor = SystemColors.Control;
             mnunhanvien.Name = "mnunhanvien";
             mnunhanvien.Size = new Size(169, 26);
             mnunhanvien.Text = "Nhân viên";
@@ -69,6 +70,7 @@
             // 
             // mnukhachhang
             // 
+            mnukhachhang.BackColor = SystemColors.Control;
             mnukhachhang.Name = "mnukhachhang";
             mnukhachhang.Size = new Size(169, 26);
             mnukhachhang.Text = "Khách hàng";
@@ -76,6 +78,7 @@
             // 
             // mnubao
             // 
+            mnubao.BackColor = SystemColors.Control;
             mnubao.Name = "mnubao";
             mnubao.Size = new Size(169, 26);
             mnubao.Text = "Báo";
@@ -117,7 +120,11 @@
             // 
             // pnlcontent
             // 
-            pnlcontent.Dock = DockStyle.Fill;
+            pnlcontent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlcontent.BackColor = Color.FromArgb(250, 248, 238);
+            pnlcontent.BackgroundImage = Properties.Resources.Background_Main;
+            pnlcontent.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlcontent.BorderStyle = BorderStyle.FixedSingle;
             pnlcontent.Location = new Point(0, 28);
             pnlcontent.Name = "pnlcontent";
             pnlcontent.Size = new Size(1082, 625);
