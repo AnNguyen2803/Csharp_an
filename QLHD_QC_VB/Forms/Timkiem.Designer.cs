@@ -163,6 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(862, 498);
             Controls.Add(txtdiachi);
             Controls.Add(lbldiachi);
