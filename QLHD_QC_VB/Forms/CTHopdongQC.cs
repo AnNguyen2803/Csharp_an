@@ -290,14 +290,6 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            sql = "select mactqc from chitietquangcao where mactqc = '" + txtmaCTQC + "'";
-            if (Class.Functions.Checkkey(sql))
-            {
-                MessageBox.Show("Đã tồn tại mã chi tiết quảng cáo " + txtmaCTQC.Text + " trong bảng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmaCTQC.Focus();
-                txtmaCTQC.Text = "";
-                return;
-            }
             sql = "insert into chitietquangcao (mactqc,mabao,madv,noidung,ngaybd,ngaykt,dongia,maqc) values ('" + txtmaCTQC.Text + "','" + cbomabao.SelectedValue.ToString() + "','" +
                 cbomadv.SelectedValue.ToString() + "',N'" + txtnoidung.Text + "','" + Class.Functions.ConvertDate(mskngaybd.Text) + "','" +
                 Class.Functions.ConvertDate(mskngaykt.Text) + "'," + txtdongia.Text + ",'" + maqc + "')";

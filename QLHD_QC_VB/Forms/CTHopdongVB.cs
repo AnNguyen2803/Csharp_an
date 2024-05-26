@@ -180,14 +180,6 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            sql = "select mactvb from chitietvietbai where mactvb = '" + txtmactvb + "'";
-            if (Class.Functions.Checkkey(sql))
-            {
-                MessageBox.Show("Đã tồn tại mã chi tiết viết bài " + txtmactvb.Text + " trong bảng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmactvb.Focus();
-                txtmactvb.Text = "";
-                return;
-            }
             sql = "insert into chitietvietbai (mactvb,mabao,matheloai,tieude,noidung,ngaydang,nhuanbut,mavb) values ('" + txtmactvb.Text + "','" + cbomabao.SelectedValue.ToString() + "','" +
                 cbomatheloai.SelectedValue.ToString() + "',N'" + txttieude.Text + "',N'" + txtnoidung.Text + "','" + Class.Functions.ConvertDate(mskngaydang.Text) + "'," +
                 txtnhuanbut.Text + ",'" + mavb + "')";

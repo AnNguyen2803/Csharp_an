@@ -138,14 +138,6 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            sql = "select makh from khachhang where makh = '" + txtmakh.Text + "'";
-            if (Class.Functions.Checkkey(sql))
-            {
-                MessageBox.Show("Đã tồn tại mã khách hàng " + txtmakh.Text + " trong bảng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmakh.Text = "";
-                txtmakh.Focus();
-                return;
-            }
             sql = "insert into khachhang (makh,tenkh,diachi,email,dienthoai,malvhd) values ('" + txtmakh.Text + "',N'" +
                 txttenkh.Text + "',N'" + txtdiachi.Text + "','" + txtemail.Text + "','" +
                 mskdienthoai.Text + "','" + cbolvhd.SelectedValue.ToString() + "')";

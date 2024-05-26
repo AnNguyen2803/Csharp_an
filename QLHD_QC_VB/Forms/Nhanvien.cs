@@ -208,14 +208,6 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            sql = "select manv from nhanvien where manv = '" + txtmanv.Text + "'";
-            if (Class.Functions.Checkkey(sql))
-            {
-                MessageBox.Show("Đã tồn tại mã nhân viên " + txtmanv.Text + " trong bảng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmanv.Focus();
-                txtmanv.Text = "";
-                return;
-            }
             sql = "insert into nhanvien (manv,tennv,gioitinh,diachi,dienthoai,email,ngaysinh,macm,matd,macv,mapb) values ('" + txtmanv.Text +
                 "',N'" + txttennv.Text + "',N'" + gt + "',N'" + txtdiachi.Text + "','" + mskdienthoai.Text + "','" + txtemail.Text + "','" +
                 Class.Functions.ConvertDate(mskngaysinh.Text) + "','" + cbochuyenmon.SelectedValue.ToString() + "','" + cbotrinhdo.SelectedValue.ToString() +

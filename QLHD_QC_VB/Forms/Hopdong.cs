@@ -232,22 +232,7 @@ namespace QLHD_QC_VB.Forms
                 cbomakh.Focus();
                 return;
             }
-            string sql;
-            if (txtmahd.Text.Substring(0, 2) == "VB")
-            {
-                sql = "select mavb from vietbai where mavb = '" + txtmahd.Text + "'";
-            }
-            else
-            {
-                sql = "select maqc from quangcao where manv = '" + txtmahd.Text + "'";
-            }
-            if (Class.Functions.Checkkey(sql))
-            {
-                MessageBox.Show("Đã tồn tại mã hợp đồng " + txtmahd.Text + " trong bảng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmahd.Focus();
-                txtmahd.Text = "";
-                return;
-            }
+            string sql
             if (txtmahd.Text.Substring(0, 2) == "VB")
             {
                 sql = "insert into vietbai (mavb,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + cbomanv.SelectedValue.ToString() + "','" +
