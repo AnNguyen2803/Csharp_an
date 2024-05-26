@@ -107,12 +107,6 @@ namespace QLHD_QC_VB.Forms
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-            if (txtmakh.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập mã khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmakh.Focus();
-                return;
-            }
             if (txttenkh.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập tên khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

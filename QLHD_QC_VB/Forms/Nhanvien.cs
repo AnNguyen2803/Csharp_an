@@ -140,12 +140,6 @@ namespace QLHD_QC_VB.Forms
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-            if (txtmanv.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmanv.Focus();
-                return;
-            }
             if (txttennv.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

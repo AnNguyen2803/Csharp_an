@@ -207,12 +207,6 @@ namespace QLHD_QC_VB.Forms
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-            if (txtmahd.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập mã hợp đồng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmahd.Focus();
-                return;
-            }
             if (mskngayky.Text == "  /  /")
             {
                 MessageBox.Show("Bạn chưa nhập ngày ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
