@@ -232,7 +232,7 @@ namespace QLHD_QC_VB.Forms
                 cbomakh.Focus();
                 return;
             }
-            string sql
+            string sql;
             if (txtmahd.Text.Substring(0, 2) == "VB")
             {
                 sql = "insert into vietbai (mavb,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + cbomanv.SelectedValue.ToString() + "','" +
