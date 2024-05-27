@@ -338,11 +338,11 @@
             lblHD.Anchor = AnchorStyles.Top;
             lblHD.AutoSize = true;
             lblHD.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblHD.Location = new Point(353, 9);
+            lblHD.Location = new Point(267, 9);
             lblHD.Name = "lblHD";
-            lblHD.Size = new Size(164, 38);
+            lblHD.Size = new Size(319, 38);
             lblHD.TabIndex = 50;
-            lblHD.Text = "HỢP ĐỒNG";
+            lblHD.Text = "DANH MỤC HỢP ĐỒNG";
             // 
             // lblmaquangcao
             // 

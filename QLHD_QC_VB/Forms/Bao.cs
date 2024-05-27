@@ -170,7 +170,7 @@ namespace QLHD_QC_VB.Forms
             string sql;
             sql = "update bao set tenbao = N'" + txttenbao.Text + "', diachi = N'" + txtdiachi.Text + "', sdt = '" + 
                 mskdienthoai.Text + "', email = '" + txtemail.Text + "' where mabao = '" + txtmabao.Text + "'";
-            Class.Functions.Runsqldel(sql);
+            Class.Functions.Runsql(sql);
             load_data(); 
             resetvalues();
             btnsua.Enabled = false;

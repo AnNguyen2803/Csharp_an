@@ -183,7 +183,7 @@ namespace QLHD_QC_VB.Forms
             sql = "insert into chitietvietbai (mactvb,mabao,matheloai,tieude,noidung,ngaydang,nhuanbut,mavb) values ('" + txtmactvb.Text + "','" + cbomabao.SelectedValue.ToString() + "','" +
                 cbomatheloai.SelectedValue.ToString() + "',N'" + txttieude.Text + "',N'" + txtnoidung.Text + "','" + Class.Functions.ConvertDate(mskngaydang.Text) + "'," +
                 txtnhuanbut.Text + ",'" + mavb + "')";
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btnluu.Enabled = false;
@@ -227,7 +227,7 @@ namespace QLHD_QC_VB.Forms
             sql = "update chitietvietbai set mabao ='" + cbomabao.SelectedValue.ToString() + "', matheloai ='" + cbomatheloai.SelectedValue.ToString() + "', noidung =N'" +
                 txtnoidung.Text + "', ngaydang ='" + Class.Functions.ConvertDate(mskngaydang.Text) + "', tieude =N'" +
                 txttieude.Text + "', nhuanbut ='" + txtnhuanbut.Text + "' where mactvb ='" + txtmactvb.Text + "'";
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btncapnhat.Enabled = false;

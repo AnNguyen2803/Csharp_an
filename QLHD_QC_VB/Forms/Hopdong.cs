@@ -243,7 +243,7 @@ namespace QLHD_QC_VB.Forms
                 sql = "insert into quangcao (maqc,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + cbomanv.SelectedValue.ToString() + "','" +
                 cbomakh.SelectedValue.ToString() + "','" + Class.Functions.ConvertDate(mskngayky.Text) + "')";
             }
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btnluu.Enabled = false;
@@ -265,7 +265,7 @@ namespace QLHD_QC_VB.Forms
                 {
                     sql = "delete from quangcao where maqc ='" + txtmahd.Text + "'";
                 }
-                Class.Functions.Runsql(sql);
+                Class.Functions.Runsqldel(sql);
                 load_data();
                 resetvalues();
                 btnsua.Enabled = false;

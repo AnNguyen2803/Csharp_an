@@ -212,7 +212,7 @@ namespace QLHD_QC_VB.Forms
                 "',N'" + txttennv.Text + "',N'" + gt + "',N'" + txtdiachi.Text + "','" + mskdienthoai.Text + "','" + txtemail.Text + "','" +
                 Class.Functions.ConvertDate(mskngaysinh.Text) + "','" + cbochuyenmon.SelectedValue.ToString() + "','" + cbotrinhdo.SelectedValue.ToString() +
                 "','" + cbochucvu.SelectedValue.ToString() + "','" + cbophongban.SelectedValue.ToString() + "')";
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btnluu.Enabled = false;
@@ -304,7 +304,7 @@ namespace QLHD_QC_VB.Forms
                 mskdienthoai.Text + "', email = '" + txtemail.Text + "', ngaysinh = '" + mskngaysinh.Text + "', macm = '" + cbochuyenmon.SelectedValue.ToString() +
                 "', matd = '" + cbotrinhdo.SelectedValue.ToString() + "', macv = '" + cbochucvu.SelectedValue.ToString() + "', mapb = '" +
                 cbophongban.SelectedValue.ToString() + "' where manv = '" + txtmanv.Text + "'";
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btnsua.Enabled = false;

@@ -211,7 +211,7 @@ namespace QLHD_QC_VB.Forms
             sql = "update chitietquangcao set mabao ='" + cbomabao.SelectedValue.ToString() + "', madv ='" + cbomadv.SelectedValue.ToString() + "', noidung =N'" +
                 txtnoidung.Text + "', ngaybd ='" + Class.Functions.ConvertDate(mskngaybd.Text) + "', ngaykt ='" + Class.Functions.ConvertDate(mskngaykt.Text) +
                 "', dongia ='" + txtdongia.Text + "' where mactqc ='" + txtmaCTQC.Text + "'";
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btncapnhat.Enabled = false;
@@ -293,7 +293,7 @@ namespace QLHD_QC_VB.Forms
             sql = "insert into chitietquangcao (mactqc,mabao,madv,noidung,ngaybd,ngaykt,dongia,maqc) values ('" + txtmaCTQC.Text + "','" + cbomabao.SelectedValue.ToString() + "','" +
                 cbomadv.SelectedValue.ToString() + "',N'" + txtnoidung.Text + "','" + Class.Functions.ConvertDate(mskngaybd.Text) + "','" +
                 Class.Functions.ConvertDate(mskngaykt.Text) + "'," + txtdongia.Text + ",'" + maqc + "')";
-            Class.Functions.GetDataToTable(sql);
+            Class.Functions.Runsql(sql);
             load_data();
             resetvalues();
             btnluu.Enabled = false;
