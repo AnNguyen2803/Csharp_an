@@ -1,6 +1,6 @@
 ﻿namespace QLHD_QC_VB.Forms
 {
-    partial class frmcthopdong
+    partial class frmctqc
     {
         /// <summary>
         /// Required designer variable.
@@ -342,7 +342,7 @@
             lblbangchu.TabIndex = 69;
             lblbangchu.Text = "Bằng chữ: ";
             // 
-            // frmcthopdong
+            // frmctqc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -378,7 +378,7 @@
             Controls.Add(lbldongia);
             Controls.Add(lblthanhtien);
             Controls.Add(lblcthd);
-            Name = "frmcthopdong";
+            Name = "frmctqc";
             Text = "Chi tiết hợp đồng quảng cáo";
             Load += CTHopdongQC_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView).EndInit();

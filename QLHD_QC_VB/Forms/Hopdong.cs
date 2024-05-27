@@ -124,19 +124,19 @@ namespace QLHD_QC_VB.Forms
 
         private void DataGridView_DoubleClick(object sender, EventArgs e)
         {
-            frmctvb a = new frmctvb();
-            frmcthopdong b = new frmcthopdong();
-            if (txtmahd.Text.Substring(0, 2) == "VB")
+            frmctvb a = new frmctvb(); //khởi tạo đối tượng frmctvb (chi tiết hợp đồng viết bài)
+            frmctqc b = new frmctqc(); //khởi tạo đối tượng frmcthopdong (chi tiết hợp đồng quảng cáo)
+            if (txtmahd.Text.Substring(0, 2) == "VB") //kiểm tra tiền tố mã hợp đồng
             {
-                a.GetValue(txtmahd.Text);
-                a.StartPosition = FormStartPosition.CenterScreen;
-                a.Show();
+                a.GetValue(txtmahd.Text); //gọi phương thức GetValue từ frmctvb
+                a.StartPosition = FormStartPosition.CenterScreen; //hiển thị form ở chính giữa màn hình
+                a.Show();//hiển thị form a
             }
             else
             {
-                b.GetValue(txtmahd.Text);
-                b.StartPosition = FormStartPosition.CenterScreen;
-                b.Show();
+                b.GetValue(txtmahd.Text); //gọi phương thức GetValue từ frmcthopdong
+                b.StartPosition = FormStartPosition.CenterScreen; //hiển thị form ở chính giữa màn hình
+                b.Show(); //hiển thị form a
             }
         }
 
@@ -194,14 +194,14 @@ namespace QLHD_QC_VB.Forms
 
         private void btnlammoi_Click(object sender, EventArgs e)
         {
-            btnlammoi.Enabled = false;
-            resetvalues();
-            btnthemhdqc.Enabled = true;
-            btnthemhdvb.Enabled = true;
-            btnluu.Enabled = false;
-            btnsua.Enabled = false;
-            btnhuy.Enabled = false;
-            load_data();
+            btnlammoi.Enabled = false; //vô hiệu hóa nút làm mới
+            resetvalues(); //gọi phương thức resetvalues() để làm mới giá trị trên form
+            btnthemhdqc.Enabled = true; //kích hoạt nút thêm hợp đồng quảng cáo
+            btnthemhdvb.Enabled = true; //kích hoạt nút thêm hợp đồng viết bài
+            btnluu.Enabled = false; //vô hiệu hóa nút lưu
+            btnsua.Enabled = false; //vô hiệu hóa nút sửa
+            btnhuy.Enabled = false; //vô hiệu hóa nút hủy
+            load_data(); //gọi phương thức load_data() để chạy lại dữ liệu
             btnxuathopdong.Enabled = false;
         }
 
@@ -233,31 +233,36 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            if (txtmahd.Text.Substring(0, 2) == "VB")
+            if (txtmahd.Text.Substring(0, 2) == "VB") //kiểm tra tiền tố mã hợp đồng
             {
-                sql = "insert into vietbai (mavb,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + cbomanv.SelectedValue.ToString() + "','" +
-                cbomakh.SelectedValue.ToString() + "','" + Class.Functions.ConvertDate(mskngayky.Text) + "')";
+                sql = "insert into vietbai (mavb,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + 
+                cbomanv.SelectedValue.ToString() + "','" +
+                cbomakh.SelectedValue.ToString() + "','" + 
+                Class.Functions.ConvertDate(mskngayky.Text) + "')";
             }
             else
             {
-                sql = "insert into quangcao (maqc,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + cbomanv.SelectedValue.ToString() + "','" +
-                cbomakh.SelectedValue.ToString() + "','" + Class.Functions.ConvertDate(mskngayky.Text) + "')";
+                sql = "insert into quangcao (maqc,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + 
+                cbomanv.SelectedValue.ToString() + "','" +
+                cbomakh.SelectedValue.ToString() + "','" + 
+                Class.Functions.ConvertDate(mskngayky.Text) + "')";
             }
-            Class.Functions.Runsql(sql);
-            load_data();
-            resetvalues();
-            btnluu.Enabled = false;
-            btnthemhdvb.Enabled = true;
-            btnthemhdqc.Enabled = true;
-            btnlammoi.Enabled = false;
+            Class.Functions.Runsql(sql); //gọi phương thức Runsql từ Class Functions để thực hiện lệnh sql
+            load_data(); //gọi phương thức load_data() để chạy lại dữ liệu
+            resetvalues(); //gọi phương thức resetvalues() để làm mới giá trị trên form
+            btnluu.Enabled = false; //vô hiệu hóa nút lưu
+            btnthemhdvb.Enabled = true; //kích hoạt nút thêm hợp đồng viết bài
+            btnthemhdqc.Enabled = true; //kích hoạt nút thêm hợp đồng quảng cáo
+            btnlammoi.Enabled = false; //vô hiệu hóa nút làm mới
         }
 
         private void btnhuy_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa hợp đồng " + txtmahd.Text + " khỏi bảng?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa hợp đồng " + txtmahd.Text + " khỏi bảng?", "Thông báo", 
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 string sql;
-                if (txtmahd.Text.Substring(0, 2) == "VB")
+                if (txtmahd.Text.Substring(0, 2) == "VB") //kiểm tra tiền tố mã hợp đồng
                 {
                     sql = "delete from vietbai where mavb ='" + txtmahd.Text + "'";
                 }
@@ -265,13 +270,13 @@ namespace QLHD_QC_VB.Forms
                 {
                     sql = "delete from quangcao where maqc ='" + txtmahd.Text + "'";
                 }
-                Class.Functions.Runsqldel(sql);
-                load_data();
-                resetvalues();
-                btnsua.Enabled = false;
-                btnlammoi.Enabled = false;
-                btnxuathopdong.Enabled = false;
-                btnhuy.Enabled = false;
+                Class.Functions.Runsqldel(sql); //gọi phương thức Runsqldel từ Class Functions để thực hiện lệnh sql
+                load_data(); //gọi phương thức load_data() để chạy lại dữ liệu
+                resetvalues(); //gọi phương thức resetvalues() để làm mới giá trị trên form
+                btnsua.Enabled = false; //vô hiệu hóa nút sửa
+                btnlammoi.Enabled = false; //vô hiệu hóa nút làm mới 
+                btnxuathopdong.Enabled = false; //vô hiệu hóa nút xuất hợp đồng
+                btnhuy.Enabled = false; //vô hiệu hóa nút hủy
             }
         }
 
@@ -303,23 +308,25 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            if (txtmahd.Text.Substring(0, 2) == "VB")
+            if (txtmahd.Text.Substring(0, 2) == "VB") //kiểm tra tiền tố mã hợp đồng
             {
-                sql = "update vietbai set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text) + "', manv ='" + cbomanv.SelectedValue + "', makh ='" +
-                cbomakh.SelectedValue + "' where mavb ='" + txtmahd.Text + "'";
+                sql = "update vietbai set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text) 
+                + "', manv ='" + cbomanv.SelectedValue 
+                + "', makh ='" + cbomakh.SelectedValue + "' where mavb ='" + txtmahd.Text + "'";
             }
             else
             {
-                sql = "update quangcao set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text) + "', manv ='" + cbomanv.SelectedValue + "', makh ='" +
-                cbomakh.SelectedValue + "' where maqc ='" + txtmahd.Text + "'";
+                sql = "update quangcao set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text) 
+                + "', manv ='" + cbomanv.SelectedValue 
+                + "', makh ='" + cbomakh.SelectedValue + "' where maqc ='" + txtmahd.Text + "'";
             }
-            Class.Functions.Runsql(sql);
-            load_data();
-            resetvalues();
-            btnsua.Enabled = false;
-            btnhuy.Enabled = false;
-            btnxuathopdong.Enabled = false;
-            btnlammoi.Enabled = false;
+            Class.Functions.Runsql(sql); //gọi phương thức Runsql từ Class Functions để thực hiện lệnh sql
+            load_data(); //gọi phương thức load_data() để chạy lại dữ liệu
+            resetvalues(); //gọi phương thức resetvalues() để làm mới giá trị trên form
+            btnsua.Enabled = false; //vô hiệu hóa nút sửa
+            btnhuy.Enabled = false; //vô hiệu hóa nút hủy
+            btnxuathopdong.Enabled = false; //vô hiệu hóa nút xuất hợp đồng 
+            btnlammoi.Enabled = false; //vô hiệu hóa nút làm mới
         }
 
         private void btntimkiem_Click(object sender, EventArgs e)

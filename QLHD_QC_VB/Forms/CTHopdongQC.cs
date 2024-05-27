@@ -11,9 +11,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace QLHD_QC_VB.Forms
 {
-    public partial class frmcthopdong : Form
+    public partial class frmctqc : Form
     {
-        public frmcthopdong()
+        public frmctqc()
         {
             InitializeComponent();
         }
