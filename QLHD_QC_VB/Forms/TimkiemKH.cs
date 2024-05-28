@@ -35,13 +35,14 @@ namespace QLHD_QC_VB.Forms
                 }
             }
             txtmakh.Focus();
-            cbolvhd.Text = "";
+            cbolvhd.SelectedIndex = -1;
+            DataGridView.DataSource = null;
         }
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
             string sql;
-            if ((txtmakh.Text == "") && (txttenkh.Text == "") && (txtdiachi.Text == "") && (cbolvhd.Text == null))
+            if ((txtmakh.Text == "") && (txttenkh.Text == "") && (txtdiachi.Text == "") && (cbolvhd.SelectedValue == null))
             {
                 MessageBox.Show("Hãy nhập ít nhất một điều kiện để tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -100,6 +101,8 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[5].Width = 100;
             DataGridView.Columns[6].Width = 100;
             DataGridView.Columns[7].Width = 225;
+            DataGridView.AllowUserToAddRows = false;
+            DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void btntimlai_Click(object sender, EventArgs e)

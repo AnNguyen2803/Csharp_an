@@ -84,10 +84,22 @@ namespace QLHD_QC_VB.Forms
 
         private void mnuthoat_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn muốn thoát khỏi chương trình?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
+        }
+
+        private void mnutkhopdong_Click(object sender, EventArgs e)
+        {
+            frmtimkiemhd a = new frmtimkiemhd();
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
+            a.Show();
         }
     }
 }

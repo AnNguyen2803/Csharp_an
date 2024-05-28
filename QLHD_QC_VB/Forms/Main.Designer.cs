@@ -37,6 +37,7 @@
             mnubaocao = new ToolStripMenuItem();
             mnutimkiem = new ToolStripMenuItem();
             mnutkkhachhang = new ToolStripMenuItem();
+            mnutkhopdong = new ToolStripMenuItem();
             mnuthoat = new ToolStripMenuItem();
             pnlcontent = new Panel();
             menuStrip1.SuspendLayout();
@@ -99,7 +100,7 @@
             // 
             // mnutimkiem
             // 
-            mnutimkiem.DropDownItems.AddRange(new ToolStripItem[] { mnutkkhachhang });
+            mnutimkiem.DropDownItems.AddRange(new ToolStripItem[] { mnutkkhachhang, mnutkhopdong });
             mnutimkiem.Name = "mnutimkiem";
             mnutimkiem.Size = new Size(84, 24);
             mnutimkiem.Text = "Tìm kiếm";
@@ -107,9 +108,16 @@
             // mnutkkhachhang
             // 
             mnutkkhachhang.Name = "mnutkkhachhang";
-            mnutkkhachhang.Size = new Size(169, 26);
+            mnutkkhachhang.Size = new Size(224, 26);
             mnutkkhachhang.Text = "Khách hàng";
             mnutkkhachhang.Click += mnutkkhachhang_Click;
+            // 
+            // mnutkhopdong
+            // 
+            mnutkhopdong.Name = "mnutkhopdong";
+            mnutkhopdong.Size = new Size(224, 26);
+            mnutkhopdong.Text = "Hợp đồng";
+            mnutkhopdong.Click += mnutkhopdong_Click;
             // 
             // mnuthoat
             // 
@@ -162,5 +170,6 @@
         private ToolStripMenuItem mnuthoat;
         private ToolStripMenuItem mnutkkhachhang;
         private Panel pnlcontent;
+        private ToolStripMenuItem mnutkhopdong;
     }
 }

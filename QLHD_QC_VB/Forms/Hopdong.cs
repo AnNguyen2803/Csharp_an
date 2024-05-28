@@ -49,8 +49,6 @@ namespace QLHD_QC_VB.Forms
             btnluu.Enabled = false;
             btnlammoi.Enabled = false;
             btnxuathopdong.Enabled = false;
-            Class.Functions.Fillcombo("select maqc as mahd ,ngayky from quangcao union select mavb as mahd,ngayky from vietbai", cbotkmahd, "mahd", "mahd");
-            cbotkmahd.SelectedIndex = -1;
         }
         private void load_data()
         {
@@ -327,19 +325,6 @@ namespace QLHD_QC_VB.Forms
             btnhuy.Enabled = false; //vô hiệu hóa nút hủy
             btnxuathopdong.Enabled = false; //vô hiệu hóa nút xuất hợp đồng 
             btnlammoi.Enabled = false; //vô hiệu hóa nút làm mới
-        }
-
-        private void btntimkiem_Click(object sender, EventArgs e)
-        {
-            if (cbotkmahd.Text == "")
-            {
-                MessageBox.Show("Bạn phải chọn một mã hợp đồng để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbotkmahd.Focus();
-                return;
-            }
-            txtmahd.Text = cbotkmahd.Text;
-            load_data_txt();
-            cbotkmahd.SelectedIndex = -1;
         }
 
         private void btnxuathopdong_Click(object sender, EventArgs e)
