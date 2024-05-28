@@ -94,7 +94,7 @@ create table dichvu (
 create table chitietquangcao (
 	mactqc varchar(30) not null primary key,
 	maqc varchar(30) not null,
-	constraint fk_ctqc_qc foreign key (maqc) references quangcao(maqc),
+	constraint fk_ctqc_qc foreign key (maqc) references quangcao(maqc) on delete cascade,
 	madv varchar(10) not null,
 	constraint fk_ctqc_dv foreign key (madv) references dichvu(madv),
 	mabao varchar(10) not null,
@@ -108,7 +108,7 @@ create table chitietquangcao (
 create table chitietvietbai (
 	mactvb varchar(30) not null primary key,
 	mavb varchar(30) not null,
-	constraint fk_ctvb_vb foreign key (mavb) references vietbai(mavb),
+	constraint fk_ctvb_vb foreign key (mavb) references vietbai(mavb) on delete cascade,
 	mabao varchar(10) not null,
 	constraint fk_ctvb_bao foreign key (mabao) references bao(mabao),
 	matheloai varchar(10) not null,
@@ -158,13 +158,21 @@ insert into chucvu values ('CV04',N'Phóng viên')
 insert into bao values ('B01',N'Báo Tuổi Trẻ',N'60A Hoàng Văn Thụ, P.9, Q.Phú Nhuận, Tp. Hồ Chí Minh','0918033133','tto@tuoitre.com.vn');
 insert into bao values ('B02',N'Báo VNExpress',N'Tầng 10, Tòa A FPT Tower, số 10 Phạm Văn Bạch, Dịch Vọng, Cầu Giấy, Hà Nội','0247300889','');
 insert into bao values ('B03',N'Báo Người Lao Động',N'127 Võ Văn Tần, Phường Võ Thị Sáu, Quận 3 - TPHCM','0283930626','doanhnghiep@admicro.vn');
+insert into bao values ('B04',N'CafeF',N'Tầng 21 Tòa nhà Center Building, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội','0926864344','info@cafef.vn');
+insert into bao values ('B05',N'Kenh14.vn',N'Tầng 21, tòa nhà Center Building, số 1 Nguyễn Huy Tưởng, Thanh Xuân Trung, Thanh Xuân, Hà Nội','0247309555','giaitrixahoi@admicro.vn');
+insert into bao values ('B06',N'Báo mới',N'Tầng 16, Tòa nhà TNR Tower, số 54A Nguyễn Chí Thanh, Láng Thượng, Đống Đa, Hà Nội','0243542355','contact.baomoi@epi.com.vn');
 
 insert into theloai values ('TL01',N'Thể thao');
 insert into theloai values ('TL02',N'Kinh doanh');
-insert into theloai values ('TL03',N'Bất động sản')
+insert into theloai values ('TL03',N'Bất động sản');
+insert into theloai values ('TL04',N'Ngân hàng');
+insert into theloai values ('TL05',N'Chứng khoán');
 
 insert into linhvuchoatdong values ('LVHD01',N'Thể thao');
-insert into linhvuchoatdong values ('LVHD02',N'Kinh doanh')
+insert into linhvuchoatdong values ('LVHD02',N'Kinh doanh');
+insert into linhvuchoatdong values ('LVHD03',N'Bất động sản');
+insert into linhvuchoatdong values ('LVHD04',N'Ngân hàng');
+insert into linhvuchoatdong values ('LVHD05',N'Chứng khoán')
 
 insert into dichvu values ('DV01',N'Landing Page');
 insert into dichvu values ('DV02',N'Banner TVC');
@@ -179,13 +187,43 @@ insert into banggiaqc values ('B02','DV03',1200000)
 insert into banggiaqc values ('B03','DV01',750000)
 insert into banggiaqc values ('B03','DV02',1200000)
 insert into banggiaqc values ('B03','DV03',1000000)
+insert into banggiaqc values ('B04','DV01',1500000)
+insert into banggiaqc values ('B04','DV02',1700000)
+insert into banggiaqc values ('B04','DV03',2000000)
+insert into banggiaqc values ('B05','DV01',900000)
+insert into banggiaqc values ('B05','DV02',1300000)
+insert into banggiaqc values ('B05','DV03',1700000)
+insert into banggiaqc values ('B06','DV01',950000)
+insert into banggiaqc values ('B06','DV02',1650000)
+insert into banggiaqc values ('B06','DV03',1800000)
 
 insert into banggiavb values ('B01','TL01',500000)
 insert into banggiavb values ('B01','TL02',1000000)
 insert into banggiavb values ('B01','TL03',1500000)
+insert into banggiavb values ('B01','TL04',1000000)
+insert into banggiavb values ('B01','TL05',1200000)
 insert into banggiavb values ('B02','TL01',800000)
 insert into banggiavb values ('B02','TL02',1500000)
 insert into banggiavb values ('B02','TL03',2000000)
+insert into banggiavb values ('B02','TL04',850000)
+insert into banggiavb values ('B02','TL05',1350000)
 insert into banggiavb values ('B03','TL01',450000)
 insert into banggiavb values ('B03','TL02',950000)
 insert into banggiavb values ('B03','TL03',1200000)
+insert into banggiavb values ('B03','TL04',950000)
+insert into banggiavb values ('B03','TL05',1000000)
+insert into banggiavb values ('B04','TL01',850000)
+insert into banggiavb values ('B04','TL02',1200000)
+insert into banggiavb values ('B04','TL03',1300000)
+insert into banggiavb values ('B04','TL04',1400000)
+insert into banggiavb values ('B04','TL05',1500000)
+insert into banggiavb values ('B05','TL01',865000)
+insert into banggiavb values ('B05','TL02',1000000)
+insert into banggiavb values ('B05','TL03',1300000)
+insert into banggiavb values ('B05','TL04',1400000)
+insert into banggiavb values ('B05','TL05',1450000)
+insert into banggiavb values ('B06','TL01',750000)
+insert into banggiavb values ('B06','TL02',950000)
+insert into banggiavb values ('B06','TL03',1250000)
+insert into banggiavb values ('B06','TL04',1400000)
+insert into banggiavb values ('B06','TL05',1650000)

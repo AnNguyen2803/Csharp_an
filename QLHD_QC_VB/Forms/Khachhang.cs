@@ -107,6 +107,12 @@ namespace QLHD_QC_VB.Forms
 
         private void btnluu_Click(object sender, EventArgs e)
         {
+            if (txtmakh.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtmakh.Focus();
+                return;
+            }
             if (txttenkh.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập tên khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -159,6 +165,12 @@ namespace QLHD_QC_VB.Forms
 
         private void btnsua_Click(object sender, EventArgs e)
         {
+            if (txtmakh.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtmakh.Focus();
+                return;
+            }
             if (txttenkh.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập tên khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -190,6 +202,14 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
+            sql = "select makh from bao where makh = '" + txtmakh.Text + "'";
+            if (Class.Functions.Checkkey(sql))
+            {
+                MessageBox.Show("Đã tồn tại khách hàng " + txtmakh.Text + " trong bảng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtmakh.Text = "";
+                txtmakh.Focus();
+                return;
+            }
             sql = "update khachhang set tenkh = N'" + txttenkh.Text + "', diachi = N'" + txtdiachi.Text + "', dienthoai = '" + mskdienthoai.Text +
                 "',email = '" + txtemail.Text + "', malvhd = '" + cbolvhd.SelectedValue.ToString() + "' where makh = '" + txtmakh.Text + "'";
             Class.Functions.Runsql(sql);
