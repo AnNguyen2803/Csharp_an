@@ -71,7 +71,7 @@ namespace QLHD_QC_VB.Forms
                 "group by a.maqc,manv,makh,ngayky) a where 1=1";
             if (txtmahd.Text != "")
             {
-                sql = sql + " and mahd like N'%" + txtmakh.Text + "%'";
+                sql = sql + " and mahd like N'%" + txtmahd.Text + "%'";
             }
             if (txtmanv.Text != "")
             {

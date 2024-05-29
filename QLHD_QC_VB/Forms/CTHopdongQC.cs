@@ -328,7 +328,7 @@ namespace QLHD_QC_VB.Forms
 
         private void DataGridView_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa dịch vụ quảng cáo này?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa dịch vụ quảng cáo này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 string sql;
                 sql = "delete from chitietquangcao where mactqc = '" + txtmaCTQC.Text + "'";
@@ -337,6 +337,18 @@ namespace QLHD_QC_VB.Forms
                 resetvalues();
                 btnboqua.Enabled = false;
                 btncapnhat.Enabled = false;
+            }
+        }
+
+        private void txtdongia_TextChanged(object sender, EventArgs e)
+        {
+            if(txtdongia.Text != "" && mskngaykt.Text.Length == 10 && mskngaykt.Text.IndexOf(' ') == -1 && mskngaykt.Text.Length == 10 && mskngaykt.Text.IndexOf(' ') == -1)
+            {
+                txtthanhtien.Text = Convert.ToString(Class.Functions.DateDiff(mskngaybd.Text, mskngaykt.Text) * Convert.ToInt32(txtdongia.Text));
+            }
+            else
+            {
+                txtthanhtien.Text = "0";
             }
         }
     }

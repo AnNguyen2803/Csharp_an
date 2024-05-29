@@ -231,6 +231,7 @@
             txtdongia.Name = "txtdongia";
             txtdongia.Size = new Size(131, 27);
             txtdongia.TabIndex = 54;
+            txtdongia.TextChanged += txtdongia_TextChanged;
             // 
             // txttendv
             // 
