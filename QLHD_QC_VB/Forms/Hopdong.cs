@@ -25,11 +25,11 @@ namespace QLHD_QC_VB.Forms
             cbomakh.Text = "";
             cbomanv.Text = "";
         }
-        string makh = "";
-        public void GetValue(string value)
-        {
-            makh = value;
-        }
+        //string makh = "";
+        //public void GetValue(string value)
+        //{
+        //    makh = value;
+        //}
 
         private void Hopdong_Load(object sender, EventArgs e)
         {
@@ -49,11 +49,13 @@ namespace QLHD_QC_VB.Forms
             btnluu.Enabled = false;
             btnlammoi.Enabled = false;
             btnxuathopdong.Enabled = false;
+            Class.Functions.Fillcombo("select maqc as mahd ,ngayky from quangcao union select mavb as mahd,ngayky from vietbai", cbotkmahd, "mahd", "mahd");
+            cbotkmahd.SelectedIndex = -1;
         }
         private void load_data()
         {
             string sql;
-            if (makh == "")
+            if (cbotkmahd.Text == "")
             {
                 sql = "select a.mavb as mahd,a.manv,a.makh,ngayky,coalesce(sum(nhuanbut),0) as tongtien from vietbai a full join chitietvietbai b on a.mavb=b.mavb " +
                     "group by a.mavb,a.manv,a.makh,ngayky " +
@@ -64,13 +66,14 @@ namespace QLHD_QC_VB.Forms
             }
             else
             {
-                sql = "select a.mavb as mahd,a.manv,a.makh,ngayky,coalesce(sum(nhuanbut),0) as tongtien " +
-                    "from vietbai a full join chitietvietbai b on a.mavb=b.mavb " + "where a.makh = '" + makh + "' " +
+                sql = "select * from (" +
+                    "select a.mavb as mahd,a.manv,a.makh,ngayky,coalesce(sum(nhuanbut),0) as tongtien " +
+                    "from vietbai a full join chitietvietbai b on a.mavb=b.mavb " +
                     "group by a.mavb,a.manv,a.makh,ngayky " +
                     "union " +
                     "select a.maqc as mahd,manv,makh,ngayky,coalesce(sum(dongia * abs(datediff(day,ngaykt,ngaybd))),0) as tongtien " +
-                    "from quangcao a full join chitietquangcao b on a.maqc=b.maqc " + "where a.makh = '" + makh + "' " +
-                    "group by a.maqc,manv,makh,ngayky";
+                    "from quangcao a full join chitietquangcao b on a.maqc=b.maqc " +
+                    "group by a.maqc,manv,makh,ngayky ) a where mahd ='" + cbotkmahd.Text +"'";
             }
             tblhopdong = Class.Functions.GetDataToTable(sql);
             DataGridView.DataSource = tblhopdong;
@@ -80,10 +83,10 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[3].HeaderText = "Ngày ký";
             DataGridView.Columns[4].HeaderText = "Tổng tiền";
             DataGridView.Columns[0].Width = 170;
-            DataGridView.Columns[1].Width = 170;
-            DataGridView.Columns[2].Width = 170;
+            DataGridView.Columns[1].Width = 153;
+            DataGridView.Columns[2].Width = 153;
             DataGridView.Columns[3].Width = 125;
-            DataGridView.Columns[4].Width = 110;
+            DataGridView.Columns[4].Width = 135;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -233,16 +236,16 @@ namespace QLHD_QC_VB.Forms
             string sql;
             if (txtmahd.Text.Substring(0, 2) == "VB") //kiểm tra tiền tố mã hợp đồng
             {
-                sql = "insert into vietbai (mavb,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + 
+                sql = "insert into vietbai (mavb,manv,makh,ngayky) values ('" + txtmahd.Text + "','" +
                 cbomanv.SelectedValue.ToString() + "','" +
-                cbomakh.SelectedValue.ToString() + "','" + 
+                cbomakh.SelectedValue.ToString() + "','" +
                 Class.Functions.ConvertDate(mskngayky.Text) + "')";
             }
             else
             {
-                sql = "insert into quangcao (maqc,manv,makh,ngayky) values ('" + txtmahd.Text + "','" + 
+                sql = "insert into quangcao (maqc,manv,makh,ngayky) values ('" + txtmahd.Text + "','" +
                 cbomanv.SelectedValue.ToString() + "','" +
-                cbomakh.SelectedValue.ToString() + "','" + 
+                cbomakh.SelectedValue.ToString() + "','" +
                 Class.Functions.ConvertDate(mskngayky.Text) + "')";
             }
             Class.Functions.Runsql(sql); //gọi phương thức Runsql từ Class Functions để thực hiện lệnh sql
@@ -256,7 +259,7 @@ namespace QLHD_QC_VB.Forms
 
         private void btnhuy_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa hợp đồng " + txtmahd.Text + " khỏi bảng?", "Thông báo", 
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa hợp đồng " + txtmahd.Text + " khỏi bảng?", "Thông báo",
             MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 string sql;
@@ -308,14 +311,14 @@ namespace QLHD_QC_VB.Forms
             string sql;
             if (txtmahd.Text.Substring(0, 2) == "VB") //kiểm tra tiền tố mã hợp đồng
             {
-                sql = "update vietbai set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text) 
-                + "', manv ='" + cbomanv.SelectedValue 
+                sql = "update vietbai set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text)
+                + "', manv ='" + cbomanv.SelectedValue
                 + "', makh ='" + cbomakh.SelectedValue + "' where mavb ='" + txtmahd.Text + "'";
             }
             else
             {
-                sql = "update quangcao set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text) 
-                + "', manv ='" + cbomanv.SelectedValue 
+                sql = "update quangcao set ngayky = '" + Class.Functions.ConvertDate(mskngayky.Text)
+                + "', manv ='" + cbomanv.SelectedValue
                 + "', makh ='" + cbomakh.SelectedValue + "' where maqc ='" + txtmahd.Text + "'";
             }
             Class.Functions.Runsql(sql); //gọi phương thức Runsql từ Class Functions để thực hiện lệnh sql
@@ -372,13 +375,14 @@ namespace QLHD_QC_VB.Forms
                 exRange.Range["A7:H7"].Value = "HỢP ĐỒNG QUẢNG CÁO";
             }
 
-            sql = "select a.mavb as mahd,chucvu,c.dienthoai,ngayky,coalesce(sum(nhuanbut),0) as tongtien " +
+            sql = "select * from ("+
+                "select a.mavb as mahd,chucvu,c.dienthoai,ngayky,coalesce(sum(nhuanbut),0) as tongtien " +
                 "from vietbai a full join chitietvietbai b on a.mavb=b.mavb join nhanvien c on c.manv = a.manv join chucvu d on d.macv = c.macv " +
                 "group by a.mavb,a.manv,makh,ngayky,tennv,chucvu,c.dienthoai " +
                 "union " +
                 "select a.maqc as mahd,chucvu,c.dienthoai,ngayky,coalesce(sum(dongia * abs(datediff(day,ngaykt,ngaybd))),0) as tongtien " +
                 "from quangcao a full join chitietquangcao b on a.maqc=b.maqc join nhanvien c on c.manv = a.manv join chucvu d on d.macv = c.macv " +
-                "group by a.maqc,a.manv,makh,ngayky,tennv,chucvu,c.dienthoai";
+                "group by a.maqc,a.manv,makh,ngayky,tennv,chucvu,c.dienthoai) a where mahd ='" + txtmahd.Text + "'";
             tblhd = Class.Functions.GetDataToTable(sql);
             exRange.Range["A8:H8"].MergeCells = true;
             exRange.Range["A8:H8"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
@@ -555,7 +559,7 @@ namespace QLHD_QC_VB.Forms
             exRange.Range["A1:C1"].Font.Bold = true;
             exRange.Range["A2:C2"].MergeCells = true;
             exRange.Range["A2:C2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            string[] Name_NV = txttenkh.Text.Split(" ");
+            string[] Name_NV = txttennv.Text.Split(" ");
             exRange.Range["A2:C2"].Value = Name_NV[2];
             exRange.Range["A3:C3"].MergeCells = true;
             exRange.Range["A3:C3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
@@ -565,10 +569,23 @@ namespace QLHD_QC_VB.Forms
 
         private void btndong_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn muốn đóng chương trình?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn đóng chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
+        }
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            if (cbotkmahd.Text == "")
+            {
+                MessageBox.Show("Bạn phải chọn một mã hợp đồng để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbotkmahd.Focus();
+                return;
+            }
+            load_data();
+            cbotkmahd.SelectedIndex = -1;
+            btnlammoi.Enabled = true;
         }
     }
 }

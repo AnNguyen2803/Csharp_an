@@ -32,7 +32,6 @@ namespace QLHD_QC_VB.Forms
             btnsua.Enabled = false;
             btnxoa.Enabled = false;
             btnluu.Enabled = false;
-            txtmanv.ReadOnly = true;
         }
         DataTable tblnhanvien;
         private void load_data()
@@ -97,7 +96,9 @@ namespace QLHD_QC_VB.Forms
             resetvalues();
             txtmanv.Focus();
             btnlammoi.Enabled = true;
-            txtmanv.Text = Class.Functions.CreateKey("NV");
+            txtmanv.ReadOnly = false;
+            btnsua.Enabled = false;
+            btnxoa.Enabled = false;
         }
 
         private void DataGridView_Click(object sender, EventArgs e)
@@ -136,10 +137,17 @@ namespace QLHD_QC_VB.Forms
             btnsua.Enabled = true;
             btnxoa.Enabled = true;
             btnlammoi.Enabled = true;
+            txtmanv.ReadOnly = true;
         }
 
         private void btnluu_Click(object sender, EventArgs e)
         {
+            if (txtmanv.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtmanv.Focus();
+                return;
+            }
             if (txttennv.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -208,6 +216,14 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
+            sql = "select manv from nhanvien where manv = '" + txtmanv.Text + "'";
+            if (Class.Functions.Checkkey(sql))
+            {
+                MessageBox.Show("Đã tồn tại nhân viên " + txtmanv.Text + " trong bảng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtmanv.Text = "";
+                txtmanv.Focus();
+                return;
+            }
             sql = "insert into nhanvien (manv,tennv,gioitinh,diachi,dienthoai,email,ngaysinh,macm,matd,macv,mapb) values ('" + txtmanv.Text +
                 "',N'" + txttennv.Text + "',N'" + gt + "',N'" + txtdiachi.Text + "','" + mskdienthoai.Text + "','" + txtemail.Text + "','" +
                 Class.Functions.ConvertDate(mskngaysinh.Text) + "','" + cbochuyenmon.SelectedValue.ToString() + "','" + cbotrinhdo.SelectedValue.ToString() +
@@ -232,6 +248,12 @@ namespace QLHD_QC_VB.Forms
 
         private void btnsua_Click(object sender, EventArgs e)
         {
+            if (txtmanv.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtmanv.Focus();
+                return;
+            }
             if (txttennv.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -301,7 +323,7 @@ namespace QLHD_QC_VB.Forms
             }
             string sql;
             sql = "update nhanvien set tennv = N'" + txttennv.Text + "', gioitinh = N'" + gt + "', diachi = N'" + txtdiachi.Text + "', dienthoai = '" +
-                mskdienthoai.Text + "', email = '" + txtemail.Text + "', ngaysinh = '" + mskngaysinh.Text + "', macm = '" + cbochuyenmon.SelectedValue.ToString() +
+                mskdienthoai.Text + "', email = '" + txtemail.Text + "', ngaysinh = '" + Class.Functions.ConvertDate(mskngaysinh.Text) + "', macm = '" + cbochuyenmon.SelectedValue.ToString() +
                 "', matd = '" + cbotrinhdo.SelectedValue.ToString() + "', macv = '" + cbochucvu.SelectedValue.ToString() + "', mapb = '" +
                 cbophongban.SelectedValue.ToString() + "' where manv = '" + txtmanv.Text + "'";
             Class.Functions.Runsql(sql);

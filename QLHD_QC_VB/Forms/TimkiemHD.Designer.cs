@@ -228,6 +228,7 @@
             // 
             // cboloaihd
             // 
+            cboloaihd.Anchor = AnchorStyles.Top;
             cboloaihd.FormattingEnabled = true;
             cboloaihd.Location = new Point(794, 114);
             cboloaihd.Name = "cboloaihd";

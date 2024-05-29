@@ -78,10 +78,10 @@
             // 
             DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(54, 184);
+            DataGridView.Location = new Point(140, 184);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
-            DataGridView.Size = new Size(755, 248);
+            DataGridView.Size = new Size(583, 248);
             DataGridView.TabIndex = 3;
             // 
             // btntimlai
@@ -119,7 +119,7 @@
             // txtmakh
             // 
             txtmakh.Anchor = AnchorStyles.Top;
-            txtmakh.Location = new Point(588, 129);
+            txtmakh.Location = new Point(199, 129);
             txtmakh.Name = "txtmakh";
             txtmakh.Size = new Size(221, 27);
             txtmakh.TabIndex = 7;
@@ -137,7 +137,7 @@
             // txttenkh
             // 
             txttenkh.Anchor = AnchorStyles.Top;
-            txttenkh.Location = new Point(199, 129);
+            txttenkh.Location = new Point(588, 83);
             txttenkh.Name = "txttenkh";
             txttenkh.Size = new Size(221, 27);
             txttenkh.TabIndex = 9;
@@ -155,7 +155,7 @@
             // txtdiachi
             // 
             txtdiachi.Anchor = AnchorStyles.Top;
-            txtdiachi.Location = new Point(588, 83);
+            txtdiachi.Location = new Point(588, 129);
             txtdiachi.Name = "txtdiachi";
             txtdiachi.Size = new Size(221, 27);
             txtdiachi.TabIndex = 11;

@@ -95,7 +95,7 @@ namespace QLHD_QC_VB.Forms
             }
             if (txtgiatri.Text != "")
             {
-                sql = sql + " and tongtien <=" + txtgiatri.Text + "'";
+                sql = sql + " and tongtien <=" + txtgiatri.Text + "";
             }
             tbltkhd = Class.Functions.GetDataToTable(sql);
             if (tbltkhd.Rows.Count == 0)

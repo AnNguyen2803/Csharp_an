@@ -32,7 +32,6 @@ namespace QLHD_QC_VB.Forms
             btnxoa.Enabled = false;
             btnlammoi.Enabled = false;
             btnluu.Enabled = false;
-            txtmakh.ReadOnly = true;
             load_data();
             Class.Functions.Fillcombo("Select malvhd,linhvuchoatdong from linhvuchoatdong", cbolvhd, "malvhd", "linhvuchoatdong");
             cbolvhd.SelectedIndex = -1;
@@ -53,9 +52,9 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[0].Width = 150;
             DataGridView.Columns[1].Width = 150;
             DataGridView.Columns[2].Width = 125;
-            DataGridView.Columns[3].Width = 225;
+            DataGridView.Columns[3].Width = 150;
             DataGridView.Columns[4].Width = 150;
-            DataGridView.Columns[5].Width = 175;
+            DataGridView.Columns[5].Width = 220;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -83,6 +82,7 @@ namespace QLHD_QC_VB.Forms
             btnsua.Enabled = true;
             btnxoa.Enabled = true;
             btnlammoi.Enabled = true;
+            txtmakh.ReadOnly = true;
         }
 
         private void btnthemmoi_Click(object sender, EventArgs e)
@@ -92,7 +92,9 @@ namespace QLHD_QC_VB.Forms
             resetvalues();
             txtmakh.Focus();
             btnlammoi.Enabled = true;
-            txtmakh.Text = Class.Functions.CreateKey("KH");
+            txtmakh.ReadOnly = false;
+            btnsua.Enabled = false;
+            btnxoa.Enabled = false;
         }
 
         private void btnlammoi_Click(object sender, EventArgs e)
@@ -109,7 +111,7 @@ namespace QLHD_QC_VB.Forms
         {
             if (txtmakh.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập mã khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtmakh.Focus();
                 return;
             }
@@ -144,6 +146,14 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
+            sql = "select makh from khachhang where makh = '" + txtmakh.Text + "'";
+            if (Class.Functions.Checkkey(sql))
+            {
+                MessageBox.Show("Đã tồn tại khách hàng " + txtmakh.Text + " trong bảng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtmakh.Text = "";
+                txtmakh.Focus();
+                return;
+            }
             sql = "insert into khachhang (makh,tenkh,diachi,email,dienthoai,malvhd) values ('" + txtmakh.Text + "',N'" +
                 txttenkh.Text + "',N'" + txtdiachi.Text + "','" + txtemail.Text + "','" +
                 mskdienthoai.Text + "','" + cbolvhd.SelectedValue.ToString() + "')";
@@ -202,14 +212,6 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             string sql;
-            sql = "select makh from bao where makh = '" + txtmakh.Text + "'";
-            if (Class.Functions.Checkkey(sql))
-            {
-                MessageBox.Show("Đã tồn tại khách hàng " + txtmakh.Text + " trong bảng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtmakh.Text = "";
-                txtmakh.Focus();
-                return;
-            }
             sql = "update khachhang set tenkh = N'" + txttenkh.Text + "', diachi = N'" + txtdiachi.Text + "', dienthoai = '" + mskdienthoai.Text +
                 "',email = '" + txtemail.Text + "', malvhd = '" + cbolvhd.SelectedValue.ToString() + "' where makh = '" + txtmakh.Text + "'";
             Class.Functions.Runsql(sql);

@@ -47,6 +47,7 @@ namespace QLHD_QC_VB.Forms
         private void CTHopdongQC_Load(object sender, EventArgs e)
         {
             load_data();
+            txtmaCTQC.ReadOnly = true;
             txttendv.ReadOnly = true;
             txttenbao.ReadOnly = true;
             txtdongia.ReadOnly = true;

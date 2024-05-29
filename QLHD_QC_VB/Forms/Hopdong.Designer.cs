@@ -55,6 +55,9 @@
             lblHD = new Label();
             lblmaquangcao = new Label();
             btnthemhdvb = new Button();
+            cbotkmahd = new ComboBox();
+            btntimkiem = new Button();
+            lbltkhd = new Label();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -106,7 +109,7 @@
             // btnluu
             // 
             btnluu.Anchor = AnchorStyles.Bottom;
-            btnluu.Location = new Point(536, 493);
+            btnluu.Location = new Point(625, 493);
             btnluu.Name = "btnluu";
             btnluu.Size = new Size(70, 29);
             btnluu.TabIndex = 70;
@@ -117,7 +120,7 @@
             // btnsua
             // 
             btnsua.Anchor = AnchorStyles.Bottom;
-            btnsua.Location = new Point(625, 493);
+            btnsua.Location = new Point(536, 493);
             btnsua.Name = "btnsua";
             btnsua.Size = new Size(70, 29);
             btnsua.TabIndex = 69;
@@ -332,11 +335,44 @@
             btnthemhdvb.UseVisualStyleBackColor = true;
             btnthemhdvb.Click += btnthemhdvb_Click;
             // 
+            // cbotkmahd
+            // 
+            cbotkmahd.Anchor = AnchorStyles.Bottom;
+            cbotkmahd.FormattingEnabled = true;
+            cbotkmahd.Location = new Point(133, 535);
+            cbotkmahd.Name = "cbotkmahd";
+            cbotkmahd.Size = new Size(177, 28);
+            cbotkmahd.TabIndex = 79;
+            // 
+            // btntimkiem
+            // 
+            btntimkiem.Anchor = AnchorStyles.Bottom;
+            btntimkiem.Location = new Point(316, 534);
+            btntimkiem.Name = "btntimkiem";
+            btntimkiem.Size = new Size(87, 29);
+            btntimkiem.TabIndex = 80;
+            btntimkiem.Text = "Tìm kiếm";
+            btntimkiem.UseVisualStyleBackColor = true;
+            btntimkiem.Click += btntimkiem_Click;
+            // 
+            // lbltkhd
+            // 
+            lbltkhd.Anchor = AnchorStyles.Bottom;
+            lbltkhd.AutoSize = true;
+            lbltkhd.Location = new Point(25, 538);
+            lbltkhd.Name = "lbltkhd";
+            lbltkhd.Size = new Size(102, 20);
+            lbltkhd.TabIndex = 81;
+            lbltkhd.Text = "Mã hợp đồng:";
+            // 
             // frmhopdong
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(858, 584);
+            Controls.Add(lbltkhd);
+            Controls.Add(btntimkiem);
+            Controls.Add(cbotkmahd);
             Controls.Add(btnthemhdvb);
             Controls.Add(label1);
             Controls.Add(btndong);
@@ -401,5 +437,8 @@
         private Label lblHD;
         private Label lblmaquangcao;
         private Button btnthemhdvb;
+        private ComboBox cbotkmahd;
+        private Button btntimkiem;
+        private Label lbltkhd;
     }
 }
