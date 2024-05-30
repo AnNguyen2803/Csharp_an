@@ -54,6 +54,7 @@
             txtdoanhthu = new TextBox();
             btnhienthi = new Button();
             btnlammoi = new Button();
+            btndong = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             grbtheokhoang.SuspendLayout();
             SuspendLayout();
@@ -83,7 +84,7 @@
             // 
             lbltongtien.Anchor = AnchorStyles.Bottom;
             lbltongtien.AutoSize = true;
-            lbltongtien.Location = new Point(612, 451);
+            lbltongtien.Location = new Point(617, 451);
             lbltongtien.Name = "lbltongtien";
             lbltongtien.Size = new Size(75, 20);
             lbltongtien.TabIndex = 3;
@@ -92,7 +93,7 @@
             // txttongtien
             // 
             txttongtien.Anchor = AnchorStyles.Bottom;
-            txttongtien.Location = new Point(693, 448);
+            txttongtien.Location = new Point(698, 448);
             txttongtien.Name = "txttongtien";
             txttongtien.Size = new Size(125, 27);
             txttongtien.TabIndex = 4;
@@ -100,7 +101,7 @@
             // btninbaocao
             // 
             btninbaocao.Anchor = AnchorStyles.Bottom;
-            btninbaocao.Location = new Point(724, 481);
+            btninbaocao.Location = new Point(621, 483);
             btninbaocao.Name = "btninbaocao";
             btninbaocao.Size = new Size(94, 29);
             btninbaocao.TabIndex = 5;
@@ -140,10 +141,10 @@
             // 
             DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(120, 215);
+            DataGridView.Location = new Point(177, 215);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
-            DataGridView.Size = new Size(698, 221);
+            DataGridView.Size = new Size(578, 221);
             DataGridView.TabIndex = 0;
             // 
             // lbltheloai
@@ -302,7 +303,7 @@
             // btnhienthi
             // 
             btnhienthi.Anchor = AnchorStyles.Bottom;
-            btnhienthi.Location = new Point(612, 481);
+            btnhienthi.Location = new Point(512, 483);
             btnhienthi.Name = "btnhienthi";
             btnhienthi.Size = new Size(94, 29);
             btnhienthi.TabIndex = 21;
@@ -312,18 +313,29 @@
             // btnlammoi
             // 
             btnlammoi.Anchor = AnchorStyles.Bottom;
-            btnlammoi.Location = new Point(499, 481);
+            btnlammoi.Location = new Point(402, 483);
             btnlammoi.Name = "btnlammoi";
             btnlammoi.Size = new Size(94, 29);
             btnlammoi.TabIndex = 22;
             btnlammoi.Text = "Làm mới";
             btnlammoi.UseVisualStyleBackColor = true;
             // 
+            // btndong
+            // 
+            btndong.Anchor = AnchorStyles.Bottom;
+            btndong.Location = new Point(729, 483);
+            btndong.Name = "btndong";
+            btndong.Size = new Size(94, 29);
+            btndong.TabIndex = 23;
+            btndong.Text = "Đóng";
+            btndong.UseVisualStyleBackColor = true;
+            // 
             // frmbaocaodt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(941, 524);
+            Controls.Add(btndong);
             Controls.Add(btnlammoi);
             Controls.Add(btnhienthi);
             Controls.Add(txtdoanhthu);
@@ -383,5 +395,6 @@
         private TextBox txtdoanhthu;
         private Button btnhienthi;
         private Button btnlammoi;
+        private Button btndong;
     }
 }
