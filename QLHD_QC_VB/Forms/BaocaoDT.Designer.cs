@@ -55,6 +55,7 @@
             btndong = new Button();
             chkquangcao = new CheckBox();
             chkvietbai = new CheckBox();
+            chkbao = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             grbtheokhoang.SuspendLayout();
             SuspendLayout();
@@ -112,9 +113,9 @@
             // 
             cbotobao.Anchor = AnchorStyles.Top;
             cbotobao.FormattingEnabled = true;
-            cbotobao.Location = new Point(191, 63);
+            cbotobao.Location = new Point(262, 61);
             cbotobao.Name = "cbotobao";
-            cbotobao.Size = new Size(222, 28);
+            cbotobao.Size = new Size(151, 28);
             cbotobao.TabIndex = 6;
             // 
             // lbldichvu
@@ -131,7 +132,7 @@
             // 
             lblbao.Anchor = AnchorStyles.Top;
             lblbao.AutoSize = true;
-            lblbao.Location = new Point(120, 66);
+            lblbao.Location = new Point(197, 64);
             lblbao.Name = "lblbao";
             lblbao.Size = new Size(59, 20);
             lblbao.TabIndex = 8;
@@ -285,6 +286,7 @@
             btnhienthi.TabIndex = 21;
             btnhienthi.Text = "Hiển thị";
             btnhienthi.UseVisualStyleBackColor = true;
+            btnhienthi.Click += btnhienthi_Click;
             // 
             // btnlammoi
             // 
@@ -295,6 +297,7 @@
             btnlammoi.TabIndex = 22;
             btnlammoi.Text = "Làm mới";
             btnlammoi.UseVisualStyleBackColor = true;
+            btnlammoi.Click += btnlammoi_Click;
             // 
             // btndong
             // 
@@ -308,6 +311,7 @@
             // 
             // chkquangcao
             // 
+            chkquangcao.Anchor = AnchorStyles.Top;
             chkquangcao.AutoSize = true;
             chkquangcao.Location = new Point(461, 65);
             chkquangcao.Name = "chkquangcao";
@@ -315,9 +319,11 @@
             chkquangcao.TabIndex = 24;
             chkquangcao.Text = "Quảng cáo";
             chkquangcao.UseVisualStyleBackColor = true;
+            chkquangcao.CheckedChanged += chkquangcao_CheckedChanged;
             // 
             // chkvietbai
             // 
+            chkvietbai.Anchor = AnchorStyles.Top;
             chkvietbai.AutoSize = true;
             chkvietbai.Location = new Point(461, 123);
             chkvietbai.Name = "chkvietbai";
@@ -325,12 +331,25 @@
             chkvietbai.TabIndex = 25;
             chkvietbai.Text = "Viết bài";
             chkvietbai.UseVisualStyleBackColor = true;
+            chkvietbai.CheckedChanged += chkvietbai_CheckedChanged;
+            // 
+            // chkbao
+            // 
+            chkbao.Anchor = AnchorStyles.Top;
+            chkbao.AutoSize = true;
+            chkbao.Location = new Point(120, 63);
+            chkbao.Name = "chkbao";
+            chkbao.Size = new Size(57, 24);
+            chkbao.TabIndex = 26;
+            chkbao.Text = "Báo";
+            chkbao.UseVisualStyleBackColor = true;
             // 
             // frmbaocaodt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(941, 524);
+            Controls.Add(chkbao);
             Controls.Add(chkvietbai);
             Controls.Add(chkquangcao);
             Controls.Add(btndong);
@@ -392,5 +411,6 @@
         private Button btndong;
         private CheckBox chkquangcao;
         private CheckBox chkvietbai;
+        private CheckBox chkbao;
     }
 }
