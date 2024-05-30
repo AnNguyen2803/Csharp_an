@@ -101,5 +101,17 @@ namespace QLHD_QC_VB.Forms
             pnlcontent.Controls.Add(a);
             a.Show();
         }
+
+        private void mnubaocao_Click(object sender, EventArgs e)
+        {
+            frmbaocaodt a = new frmbaocaodt();
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.TopLevel = false;
+            a.TopMost = true;
+            pnlcontent.Controls.Clear();
+            pnlcontent.Controls.Add(a);
+            a.Show();
+        }
     }
 }

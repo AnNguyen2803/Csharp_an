@@ -65,7 +65,7 @@
             // 
             mnunhanvien.BackColor = SystemColors.Control;
             mnunhanvien.Name = "mnunhanvien";
-            mnunhanvien.Size = new Size(169, 26);
+            mnunhanvien.Size = new Size(224, 26);
             mnunhanvien.Text = "Nhân viên";
             mnunhanvien.Click += mnunhanvien_Click;
             // 
@@ -73,7 +73,7 @@
             // 
             mnukhachhang.BackColor = SystemColors.Control;
             mnukhachhang.Name = "mnukhachhang";
-            mnukhachhang.Size = new Size(169, 26);
+            mnukhachhang.Size = new Size(224, 26);
             mnukhachhang.Text = "Khách hàng";
             mnukhachhang.Click += mnukhachhang_Click;
             // 
@@ -81,7 +81,7 @@
             // 
             mnubao.BackColor = SystemColors.Control;
             mnubao.Name = "mnubao";
-            mnubao.Size = new Size(169, 26);
+            mnubao.Size = new Size(224, 26);
             mnubao.Text = "Báo";
             mnubao.Click += mnubao_Click;
             // 
@@ -97,6 +97,7 @@
             mnubaocao.Name = "mnubaocao";
             mnubaocao.Size = new Size(81, 24);
             mnubaocao.Text = "Báo cáo ";
+            mnubaocao.Click += mnubaocao_Click;
             // 
             // mnutimkiem
             // 
@@ -108,14 +109,14 @@
             // mnutkkhachhang
             // 
             mnutkkhachhang.Name = "mnutkkhachhang";
-            mnutkkhachhang.Size = new Size(224, 26);
+            mnutkkhachhang.Size = new Size(169, 26);
             mnutkkhachhang.Text = "Khách hàng";
             mnutkkhachhang.Click += mnutkkhachhang_Click;
             // 
             // mnutkhopdong
             // 
             mnutkhopdong.Name = "mnutkhopdong";
-            mnutkhopdong.Size = new Size(224, 26);
+            mnutkhopdong.Size = new Size(169, 26);
             mnutkhopdong.Text = "Hợp đồng";
             mnutkhopdong.Click += mnutkhopdong_Click;
             // 
