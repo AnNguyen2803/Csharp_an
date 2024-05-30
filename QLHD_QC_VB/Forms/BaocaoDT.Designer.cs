@@ -40,8 +40,6 @@
             lbltheloai = new Label();
             cbodichvu = new ComboBox();
             cbotheloai = new ComboBox();
-            rdoquangcao = new RadioButton();
-            rdovietbai = new RadioButton();
             rdotheongay = new RadioButton();
             msktheongay = new MaskedTextBox();
             rdotheokhoang = new RadioButton();
@@ -55,6 +53,8 @@
             btnhienthi = new Button();
             btnlammoi = new Button();
             btndong = new Button();
+            chkquangcao = new CheckBox();
+            chkvietbai = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             grbtheokhoang.SuspendLayout();
             SuspendLayout();
@@ -141,10 +141,10 @@
             // 
             DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(177, 215);
+            DataGridView.Location = new Point(177, 225);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
-            DataGridView.Size = new Size(578, 221);
+            DataGridView.Size = new Size(578, 211);
             DataGridView.TabIndex = 0;
             // 
             // lbltheloai
@@ -175,30 +175,6 @@
             cbotheloai.Size = new Size(151, 28);
             cbotheloai.TabIndex = 11;
             // 
-            // rdoquangcao
-            // 
-            rdoquangcao.Anchor = AnchorStyles.Top;
-            rdoquangcao.AutoSize = true;
-            rdoquangcao.Location = new Point(461, 64);
-            rdoquangcao.Name = "rdoquangcao";
-            rdoquangcao.Size = new Size(102, 24);
-            rdoquangcao.TabIndex = 12;
-            rdoquangcao.TabStop = true;
-            rdoquangcao.Text = "Quảng cáo";
-            rdoquangcao.UseVisualStyleBackColor = true;
-            // 
-            // rdovietbai
-            // 
-            rdovietbai.Anchor = AnchorStyles.Top;
-            rdovietbai.AutoSize = true;
-            rdovietbai.Location = new Point(461, 120);
-            rdovietbai.Name = "rdovietbai";
-            rdovietbai.Size = new Size(81, 24);
-            rdovietbai.TabIndex = 13;
-            rdovietbai.TabStop = true;
-            rdovietbai.Text = "Viết bài";
-            rdovietbai.UseVisualStyleBackColor = true;
-            // 
             // rdotheongay
             // 
             rdotheongay.Anchor = AnchorStyles.Top;
@@ -225,7 +201,7 @@
             // 
             rdotheokhoang.Anchor = AnchorStyles.Top;
             rdotheokhoang.AutoSize = true;
-            rdotheokhoang.Location = new Point(120, 173);
+            rdotheokhoang.Location = new Point(120, 175);
             rdotheokhoang.Name = "rdotheokhoang";
             rdotheokhoang.Size = new Size(116, 24);
             rdotheokhoang.TabIndex = 16;
@@ -249,7 +225,7 @@
             grbtheokhoang.Controls.Add(lbltoingay);
             grbtheokhoang.Controls.Add(msktungay);
             grbtheokhoang.Controls.Add(lbltungay);
-            grbtheokhoang.Location = new Point(242, 155);
+            grbtheokhoang.Location = new Point(242, 157);
             grbtheokhoang.Name = "grbtheokhoang";
             grbtheokhoang.Size = new Size(365, 54);
             grbtheokhoang.TabIndex = 18;
@@ -286,7 +262,7 @@
             // 
             lbldoanhthu.Anchor = AnchorStyles.Top;
             lbldoanhthu.AutoSize = true;
-            lbldoanhthu.Location = new Point(613, 176);
+            lbldoanhthu.Location = new Point(613, 178);
             lbldoanhthu.Name = "lbldoanhthu";
             lbldoanhthu.Size = new Size(95, 20);
             lbldoanhthu.TabIndex = 19;
@@ -295,7 +271,7 @@
             // txtdoanhthu
             // 
             txtdoanhthu.Anchor = AnchorStyles.Top;
-            txtdoanhthu.Location = new Point(709, 171);
+            txtdoanhthu.Location = new Point(709, 173);
             txtdoanhthu.Name = "txtdoanhthu";
             txtdoanhthu.Size = new Size(109, 27);
             txtdoanhthu.TabIndex = 20;
@@ -330,11 +306,33 @@
             btndong.Text = "Đóng";
             btndong.UseVisualStyleBackColor = true;
             // 
+            // chkquangcao
+            // 
+            chkquangcao.AutoSize = true;
+            chkquangcao.Location = new Point(461, 65);
+            chkquangcao.Name = "chkquangcao";
+            chkquangcao.Size = new Size(103, 24);
+            chkquangcao.TabIndex = 24;
+            chkquangcao.Text = "Quảng cáo";
+            chkquangcao.UseVisualStyleBackColor = true;
+            // 
+            // chkvietbai
+            // 
+            chkvietbai.AutoSize = true;
+            chkvietbai.Location = new Point(461, 123);
+            chkvietbai.Name = "chkvietbai";
+            chkvietbai.Size = new Size(82, 24);
+            chkvietbai.TabIndex = 25;
+            chkvietbai.Text = "Viết bài";
+            chkvietbai.UseVisualStyleBackColor = true;
+            // 
             // frmbaocaodt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(941, 524);
+            Controls.Add(chkvietbai);
+            Controls.Add(chkquangcao);
             Controls.Add(btndong);
             Controls.Add(btnlammoi);
             Controls.Add(btnhienthi);
@@ -344,8 +342,6 @@
             Controls.Add(rdotheokhoang);
             Controls.Add(msktheongay);
             Controls.Add(rdotheongay);
-            Controls.Add(rdovietbai);
-            Controls.Add(rdoquangcao);
             Controls.Add(cbotheloai);
             Controls.Add(cbodichvu);
             Controls.Add(lbltheloai);
@@ -381,8 +377,6 @@
         private Label lbltheloai;
         private ComboBox cbodichvu;
         private ComboBox cbotheloai;
-        private RadioButton rdoquangcao;
-        private RadioButton rdovietbai;
         private RadioButton rdotheongay;
         private MaskedTextBox msktheongay;
         private RadioButton rdotheokhoang;
@@ -396,5 +390,7 @@
         private Button btnhienthi;
         private Button btnlammoi;
         private Button btndong;
+        private CheckBox chkquangcao;
+        private CheckBox chkvietbai;
     }
 }
