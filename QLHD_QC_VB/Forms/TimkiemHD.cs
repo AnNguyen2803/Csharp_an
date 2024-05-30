@@ -139,5 +139,17 @@ namespace QLHD_QC_VB.Forms
                 this.Close();
             }
         }
+
+        private void txtgiatri_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(((e.KeyChar >='0') && (e.KeyChar <='9')) || (Convert.ToInt32(e.KeyChar))==8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -182,6 +182,7 @@
             txtgiatri.Name = "txtgiatri";
             txtgiatri.Size = new Size(125, 27);
             txtgiatri.TabIndex = 13;
+            txtgiatri.KeyPress += txtgiatri_KeyPress;
             // 
             // DataGridView
             // 

@@ -47,12 +47,13 @@
             rdotheokhoang = new RadioButton();
             lbltungay = new Label();
             grbtheokhoang = new GroupBox();
-            msktungay = new MaskedTextBox();
-            lbltoingay = new Label();
             msktoingay = new MaskedTextBox();
+            lbltoingay = new Label();
+            msktungay = new MaskedTextBox();
             lbldoanhthu = new Label();
             txtdoanhthu = new TextBox();
             btnhienthi = new Button();
+            btnlammoi = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             grbtheokhoang.SuspendLayout();
             SuspendLayout();
@@ -130,10 +131,10 @@
             // DataGridView
             // 
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridView.Location = new Point(120, 245);
+            DataGridView.Location = new Point(120, 215);
             DataGridView.Name = "DataGridView";
             DataGridView.RowHeadersWidth = 51;
-            DataGridView.Size = new Size(698, 191);
+            DataGridView.Size = new Size(698, 221);
             DataGridView.TabIndex = 0;
             // 
             // lbltheloai
@@ -235,14 +236,14 @@
             grbtheokhoang.TabIndex = 18;
             grbtheokhoang.TabStop = false;
             // 
-            // msktungay
+            // msktoingay
             // 
-            msktungay.Location = new Point(46, 18);
-            msktungay.Mask = "00/00/0000";
-            msktungay.Name = "msktungay";
-            msktungay.Size = new Size(125, 27);
-            msktungay.TabIndex = 19;
-            msktungay.ValidatingType = typeof(DateTime);
+            msktoingay.Location = new Point(232, 16);
+            msktoingay.Mask = "00/00/0000";
+            msktoingay.Name = "msktoingay";
+            msktoingay.Size = new Size(125, 27);
+            msktoingay.TabIndex = 21;
+            msktoingay.ValidatingType = typeof(DateTime);
             // 
             // lbltoingay
             // 
@@ -253,14 +254,14 @@
             lbltoingay.TabIndex = 20;
             lbltoingay.Text = "Tới:";
             // 
-            // msktoingay
+            // msktungay
             // 
-            msktoingay.Location = new Point(232, 16);
-            msktoingay.Mask = "00/00/0000";
-            msktoingay.Name = "msktoingay";
-            msktoingay.Size = new Size(125, 27);
-            msktoingay.TabIndex = 21;
-            msktoingay.ValidatingType = typeof(DateTime);
+            msktungay.Location = new Point(46, 18);
+            msktungay.Mask = "00/00/0000";
+            msktungay.Name = "msktungay";
+            msktungay.Size = new Size(125, 27);
+            msktungay.TabIndex = 19;
+            msktungay.ValidatingType = typeof(DateTime);
             // 
             // lbldoanhthu
             // 
@@ -287,11 +288,21 @@
             btnhienthi.Text = "Hiển thị";
             btnhienthi.UseVisualStyleBackColor = true;
             // 
+            // btnlammoi
+            // 
+            btnlammoi.Location = new Point(499, 481);
+            btnlammoi.Name = "btnlammoi";
+            btnlammoi.Size = new Size(94, 29);
+            btnlammoi.TabIndex = 22;
+            btnlammoi.Text = "Làm mới";
+            btnlammoi.UseVisualStyleBackColor = true;
+            // 
             // frmbaocaodt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(941, 524);
+            Controls.Add(btnlammoi);
             Controls.Add(btnhienthi);
             Controls.Add(txtdoanhthu);
             Controls.Add(lbldoanhthu);
@@ -348,5 +359,6 @@
         private Label lbldoanhthu;
         private TextBox txtdoanhthu;
         private Button btnhienthi;
+        private Button btnlammoi;
     }
 }
