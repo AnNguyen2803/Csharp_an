@@ -21,14 +21,16 @@ namespace QLHD_QC_VB.Forms
         {
             Class.Functions.Fillcombo("select mabao, tenbao from bao", cbotobao, "mabao", "tenbao");
             cbotobao.SelectedIndex = -1;
-            rdoquangcao.Checked = true;
             Class.Functions.Fillcombo("select madv,dichvu from dichvu", cbodichvu, "madv", "dichvu");
             cbodichvu.SelectedIndex = -1;
+            cbodichvu.Enabled = false;
             Class.Functions.Fillcombo("select matheloai, theloai from theloai", cbotheloai, "matheloai", "theloai");
-            rdotheongay.Checked = true;
+            cbotheloai.SelectedIndex = -1;
+            cbotheloai.Enabled = false;
+            msktheongay.Enabled = false;
+            grbtheokhoang.Enabled = false;
             txttongtien.ReadOnly = true;
             btninbaocao.Enabled = false;
-            
         }
     }
 }
