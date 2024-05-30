@@ -60,6 +60,7 @@
             // 
             // lbltieudebaocao
             // 
+            lbltieudebaocao.Anchor = AnchorStyles.Top;
             lbltieudebaocao.AutoSize = true;
             lbltieudebaocao.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lbltieudebaocao.Location = new Point(332, 9);
@@ -70,6 +71,7 @@
             // 
             // lblbangchu
             // 
+            lblbangchu.Anchor = AnchorStyles.Bottom;
             lblbangchu.AutoSize = true;
             lblbangchu.Location = new Point(120, 451);
             lblbangchu.Name = "lblbangchu";
@@ -79,6 +81,7 @@
             // 
             // lbltongtien
             // 
+            lbltongtien.Anchor = AnchorStyles.Bottom;
             lbltongtien.AutoSize = true;
             lbltongtien.Location = new Point(612, 451);
             lbltongtien.Name = "lbltongtien";
@@ -88,6 +91,7 @@
             // 
             // txttongtien
             // 
+            txttongtien.Anchor = AnchorStyles.Bottom;
             txttongtien.Location = new Point(693, 448);
             txttongtien.Name = "txttongtien";
             txttongtien.Size = new Size(125, 27);
@@ -95,6 +99,7 @@
             // 
             // btninbaocao
             // 
+            btninbaocao.Anchor = AnchorStyles.Bottom;
             btninbaocao.Location = new Point(724, 481);
             btninbaocao.Name = "btninbaocao";
             btninbaocao.Size = new Size(94, 29);
@@ -104,6 +109,7 @@
             // 
             // cbotobao
             // 
+            cbotobao.Anchor = AnchorStyles.Top;
             cbotobao.FormattingEnabled = true;
             cbotobao.Location = new Point(191, 63);
             cbotobao.Name = "cbotobao";
@@ -112,6 +118,7 @@
             // 
             // lbldichvu
             // 
+            lbldichvu.Anchor = AnchorStyles.Top;
             lbldichvu.AutoSize = true;
             lbldichvu.Location = new Point(596, 66);
             lbldichvu.Name = "lbldichvu";
@@ -121,6 +128,7 @@
             // 
             // lblbao
             // 
+            lblbao.Anchor = AnchorStyles.Top;
             lblbao.AutoSize = true;
             lblbao.Location = new Point(120, 66);
             lblbao.Name = "lblbao";
@@ -130,6 +138,7 @@
             // 
             // DataGridView
             // 
+            DataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridView.Location = new Point(120, 215);
             DataGridView.Name = "DataGridView";
@@ -139,6 +148,7 @@
             // 
             // lbltheloai
             // 
+            lbltheloai.Anchor = AnchorStyles.Top;
             lbltheloai.AutoSize = true;
             lbltheloai.Location = new Point(596, 124);
             lbltheloai.Name = "lbltheloai";
@@ -148,6 +158,7 @@
             // 
             // cbodichvu
             // 
+            cbodichvu.Anchor = AnchorStyles.Top;
             cbodichvu.FormattingEnabled = true;
             cbodichvu.Location = new Point(667, 63);
             cbodichvu.Name = "cbodichvu";
@@ -156,6 +167,7 @@
             // 
             // cbotheloai
             // 
+            cbotheloai.Anchor = AnchorStyles.Top;
             cbotheloai.FormattingEnabled = true;
             cbotheloai.Location = new Point(667, 119);
             cbotheloai.Name = "cbotheloai";
@@ -164,6 +176,7 @@
             // 
             // rdoquangcao
             // 
+            rdoquangcao.Anchor = AnchorStyles.Top;
             rdoquangcao.AutoSize = true;
             rdoquangcao.Location = new Point(461, 64);
             rdoquangcao.Name = "rdoquangcao";
@@ -175,6 +188,7 @@
             // 
             // rdovietbai
             // 
+            rdovietbai.Anchor = AnchorStyles.Top;
             rdovietbai.AutoSize = true;
             rdovietbai.Location = new Point(461, 120);
             rdovietbai.Name = "rdovietbai";
@@ -186,6 +200,7 @@
             // 
             // rdotheongay
             // 
+            rdotheongay.Anchor = AnchorStyles.Top;
             rdotheongay.AutoSize = true;
             rdotheongay.Location = new Point(120, 119);
             rdotheongay.Name = "rdotheongay";
@@ -197,6 +212,7 @@
             // 
             // msktheongay
             // 
+            msktheongay.Anchor = AnchorStyles.Top;
             msktheongay.Location = new Point(242, 119);
             msktheongay.Mask = "00/00/0000";
             msktheongay.Name = "msktheongay";
@@ -206,6 +222,7 @@
             // 
             // rdotheokhoang
             // 
+            rdotheokhoang.Anchor = AnchorStyles.Top;
             rdotheokhoang.AutoSize = true;
             rdotheokhoang.Location = new Point(120, 173);
             rdotheokhoang.Name = "rdotheokhoang";
@@ -226,6 +243,7 @@
             // 
             // grbtheokhoang
             // 
+            grbtheokhoang.Anchor = AnchorStyles.Top;
             grbtheokhoang.Controls.Add(msktoingay);
             grbtheokhoang.Controls.Add(lbltoingay);
             grbtheokhoang.Controls.Add(msktungay);
@@ -265,6 +283,7 @@
             // 
             // lbldoanhthu
             // 
+            lbldoanhthu.Anchor = AnchorStyles.Top;
             lbldoanhthu.AutoSize = true;
             lbldoanhthu.Location = new Point(613, 176);
             lbldoanhthu.Name = "lbldoanhthu";
@@ -274,6 +293,7 @@
             // 
             // txtdoanhthu
             // 
+            txtdoanhthu.Anchor = AnchorStyles.Top;
             txtdoanhthu.Location = new Point(709, 171);
             txtdoanhthu.Name = "txtdoanhthu";
             txtdoanhthu.Size = new Size(109, 27);
@@ -281,6 +301,7 @@
             // 
             // btnhienthi
             // 
+            btnhienthi.Anchor = AnchorStyles.Bottom;
             btnhienthi.Location = new Point(612, 481);
             btnhienthi.Name = "btnhienthi";
             btnhienthi.Size = new Size(94, 29);
@@ -290,6 +311,7 @@
             // 
             // btnlammoi
             // 
+            btnlammoi.Anchor = AnchorStyles.Bottom;
             btnlammoi.Location = new Point(499, 481);
             btnlammoi.Name = "btnlammoi";
             btnlammoi.Size = new Size(94, 29);
