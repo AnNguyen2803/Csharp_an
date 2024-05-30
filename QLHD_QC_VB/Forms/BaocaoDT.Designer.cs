@@ -326,6 +326,7 @@
             Controls.Add(DataGridView);
             Name = "frmbaocaodt";
             Text = "Báo cáo doanh thu";
+            Load += frmbaocaodt_Load;
             ((System.ComponentModel.ISupportInitialize)DataGridView).EndInit();
             grbtheokhoang.ResumeLayout(false);
             grbtheokhoang.PerformLayout();
