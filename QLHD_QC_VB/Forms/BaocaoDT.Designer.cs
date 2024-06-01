@@ -187,6 +187,7 @@
             rdotheongay.TabStop = true;
             rdotheongay.Text = "Theo ngày";
             rdotheongay.UseVisualStyleBackColor = true;
+            rdotheongay.CheckedChanged += rdotheongay_CheckedChanged;
             // 
             // msktheongay
             // 
@@ -209,6 +210,7 @@
             rdotheokhoang.TabStop = true;
             rdotheokhoang.Text = "Theo khoảng";
             rdotheokhoang.UseVisualStyleBackColor = true;
+            rdotheokhoang.CheckedChanged += rdotheokhoang_CheckedChanged;
             // 
             // lbltungay
             // 
@@ -276,6 +278,7 @@
             txtdoanhthu.Name = "txtdoanhthu";
             txtdoanhthu.Size = new Size(109, 27);
             txtdoanhthu.TabIndex = 20;
+            txtdoanhthu.KeyPress += txtdoanhthu_KeyPress;
             // 
             // btnhienthi
             // 
@@ -343,6 +346,7 @@
             chkbao.TabIndex = 26;
             chkbao.Text = "Báo";
             chkbao.UseVisualStyleBackColor = true;
+            chkbao.CheckedChanged += chkbao_CheckedChanged;
             // 
             // frmbaocaodt
             // 
