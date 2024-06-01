@@ -29,11 +29,9 @@ namespace QLHD_QC_VB.Forms
             Class.Functions.Fillcombo("select matheloai, theloai from theloai", cbotheloai, "matheloai", "theloai");
             cbotheloai.SelectedIndex = -1;
             cbotheloai.Enabled = false;
-            //rdotheongay.Checked = true;
             msktheongay.Enabled = false;
             grbtheokhoang.Enabled = false;
             txttongtien.ReadOnly = true;
-            btninbaocao.Enabled = false;
         }
         private void resetvalues()
         {
@@ -49,6 +47,7 @@ namespace QLHD_QC_VB.Forms
             msktungay.Text = "";
             rdotheokhoang.Checked = false;
             rdotheongay.Checked = false;
+            DataGridView.DataSource = null;
         }
 
         private void chkquangcao_CheckedChanged(object sender, EventArgs e)
@@ -84,18 +83,16 @@ namespace QLHD_QC_VB.Forms
         private void btnlammoi_Click(object sender, EventArgs e)
         {
             resetvalues();
-            DataGridView.DataSource = null;
         }
 
         private void btnhienthi_Click(object sender, EventArgs e)
         {
             string sql = "";
-            //if ((chkbao.Checked == false) && (chkquangcao.Checked == false) && (msktheongay.Text == "  /  /") && (txtdoanhthu.Text == "")
-            //    && (chkvietbai.Checked == false) && (msktoingay.Text == "  /  /") && (msktungay.Text == "  /  /"))
-            //{
-            //    MessageBox.Show("Hãy nhập ít nhất một điều kiện để hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if ((!chkbao.Checked) && (!chkquangcao.Checked) && (!chkvietbai.Checked) && (!rdotheokhoang.Checked || !rdotheongay.Checked))
+            {
+                MessageBox.Show("Hãy nhập ít nhất một điều kiện để hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string col, from_dtqc, from_dt, from_dtvb, groupby, where,having;
             where = "";
             groupby = "group by ";
@@ -118,18 +115,6 @@ namespace QLHD_QC_VB.Forms
                 "from vietbai a full join chitietvietbai b on a.mavb=b.mavb " +
                 "join bao c on b.mabao=c.mabao join theloai d on d.matheloai=b.matheloai " +
                 "group by tenbao,ngayky) a where 1=1 ";
-            if (msktheongay.Text != "  /  /")
-            {
-                where = where + "and ngayky ='" + Class.Functions.ConvertDate(msktheongay.Text) + "' ";
-            }
-            if (msktheongay.Text != "  /  /")
-            {
-                where = where + "and ngayky >='" + Class.Functions.ConvertDate(msktungay.Text) + "' ";
-            }
-            if (msktoingay.Text != "  /  /")
-            {
-                where = where + "and ngayky <='" + Class.Functions.ConvertDate(msktoingay.Text) + "' ";
-            }
             if (cbotobao.SelectedValue != null)
             {
                 where = where + "and tenbao =N'" + cbotobao.Text + "' ";
@@ -142,9 +127,27 @@ namespace QLHD_QC_VB.Forms
             {
                 where = where + "and dichvu =N'" + cbodichvu.Text + "' ";
             }
+            if (msktheongay.Text != "  /  /" && msktheongay.Text.Length == 10 && msktheongay.Text.IndexOf(' ') == -1)
+            {
+                where = where + "and ngayky ='" + Class.Functions.ConvertDate(msktheongay.Text) + "' ";
+            }
+            if (msktungay.Text != "  /  /" && msktungay.Text.Length == 10 && msktungay.Text.IndexOf(' ') == -1)
+            {
+                where = where + "and ngayky >='" + Class.Functions.ConvertDate(msktungay.Text) + "' ";
+            }
+            if (msktoingay.Text != "  /  /" && msktoingay.Text.Length == 10 && msktoingay.Text.IndexOf(' ') == -1)
+            {
+                where = where + "and ngayky <='" + Class.Functions.ConvertDate(msktoingay.Text) + "' ";
+            }
+            if (msktoingay.Text != "  /  /" && msktungay.Text != "  /  /" && Class.Functions.DateDiff(msktungay.Text, msktoingay.Text) < 0)
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                msktoingay.Focus();
+                return;
+            }
             if (txtdoanhthu.Text != "")
             {
-                if (!chkbao.Checked && !chkquangcao.Checked && !chkvietbai.Checked && (!rdotheokhoang.Checked || !rdotheongay.Checked))
+                if (!chkbao.Checked && !chkquangcao.Checked && !chkvietbai.Checked && !rdotheokhoang.Checked && !rdotheongay.Checked)
                 {
                     MessageBox.Show("Hãy chọn một tiêu chí báo cáo","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     return;
@@ -174,7 +177,7 @@ namespace QLHD_QC_VB.Forms
                 }
                 sql = "select " + col + from_dt + where + groupby + col + having;
             }
-            if (rdotheokhoang.Checked || rdotheongay.Checked)
+            if ((rdotheokhoang.Checked || rdotheongay.Checked) && !chkbao.Checked)
             {
                 col = "ngayky";
                 sql = "select " + col + from_dt + where + groupby + col + having;
@@ -234,11 +237,79 @@ namespace QLHD_QC_VB.Forms
         }
         private void load_data()
         {
-            DataGridView.Columns[0].HeaderText = "Báo";
-            //DataGridView.Columns[1].HeaderText = "Dịch vụ";
-            //DataGridView.Columns[2].HeaderText = "Doanh thu";
-            //DataGridView.Columns[0].Width = 170;
-            //DataGridView.Columns[1].Width = 170;
+            if (chkbao.Checked)
+            {
+                if (rdotheongay.Checked || rdotheokhoang.Checked)
+                {
+                    DataGridView.Columns[0].HeaderText = "Ngày ký";
+                    DataGridView.Columns[1].HeaderText = "Tên báo";
+                    DataGridView.Columns[2].HeaderText = "Doanh thu";
+                }
+                else
+                {
+                    DataGridView.Columns[0].HeaderText = "Tên báo";
+                    DataGridView.Columns[1].HeaderText = "Doanh thu";
+                }
+            }
+            if ((rdotheokhoang.Checked || rdotheongay.Checked) && !chkbao.Checked)
+            {
+                DataGridView.Columns[0].HeaderText = "Ngày ký";
+                DataGridView.Columns[1].HeaderText = "Doanh thu";
+            }
+            if (chkquangcao.Checked)
+            {
+                if (chkbao.Checked && (rdotheongay.Checked || rdotheokhoang.Checked))
+                {
+                    DataGridView.Columns[0].HeaderText = "Ngày ký";
+                    DataGridView.Columns[1].HeaderText = "Tên báo";
+                    DataGridView.Columns[2].HeaderText = "Dịch vụ";
+                    DataGridView.Columns[3].HeaderText = "Doanh thu";
+                }
+                else if (chkbao.Checked)
+                {
+                    DataGridView.Columns[0].HeaderText = "Tên báo";
+                    DataGridView.Columns[1].HeaderText = "Dịch vụ";
+                    DataGridView.Columns[2].HeaderText = "Doanh thu";
+                }
+                else if (rdotheongay.Checked || rdotheokhoang.Checked)
+                {
+                    DataGridView.Columns[0].HeaderText = "Ngày ký";
+                    DataGridView.Columns[1].HeaderText = "Dịch vụ";
+                    DataGridView.Columns[2].HeaderText = "Doanh thu";
+                }
+                else
+                {
+                    DataGridView.Columns[0].HeaderText = "Dịch vụ";
+                    DataGridView.Columns[1].HeaderText = "Doanh thu";
+                }
+            }
+            if (chkvietbai.Checked)
+            {
+                if (chkbao.Checked && (rdotheongay.Checked || rdotheokhoang.Checked))
+                {
+                    DataGridView.Columns[0].HeaderText = "Ngày ký";
+                    DataGridView.Columns[1].HeaderText = "Tên báo";
+                    DataGridView.Columns[2].HeaderText = "Thể loại";
+                    DataGridView.Columns[3].HeaderText = "Doanh thu";
+                }
+                else if (chkbao.Checked)
+                {
+                    DataGridView.Columns[0].HeaderText = "Tên báo";
+                    DataGridView.Columns[1].HeaderText = "Thể loại";
+                    DataGridView.Columns[2].HeaderText = "Doanh thu";
+                }
+                else if (rdotheongay.Checked || rdotheokhoang.Checked)
+                {
+                    DataGridView.Columns[0].HeaderText = "Ngày ký";
+                    DataGridView.Columns[1].HeaderText = "Thể loại";
+                    DataGridView.Columns[2].HeaderText = "Doanh thu";
+                }
+                else
+                {
+                    DataGridView.Columns[0].HeaderText = "Thể loại";
+                    DataGridView.Columns[1].HeaderText = "Doanh thu";
+                }
+            }
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -264,6 +335,7 @@ namespace QLHD_QC_VB.Forms
             else
             {
                 msktheongay.Enabled = false;
+                msktheongay.Text = "";
             }
         }
 
@@ -276,6 +348,8 @@ namespace QLHD_QC_VB.Forms
             else
             {
                 grbtheokhoang.Enabled = false;
+                msktoingay.Text = "";
+                msktungay.Text = "";
             }
         }
 

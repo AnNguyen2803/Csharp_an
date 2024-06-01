@@ -85,13 +85,19 @@ namespace QLHD_QC_VB.Forms
             {
                 sql = sql + " and SUBSTRING(mahd,1,2) ='" + cboloaihd.Text + "'";
             }
-            if (msktungay.Text != "  /  /")
+            if (msktungay.Text != "  /  /" && msktungay.Text.Length == 10 && msktungay.Text.IndexOf(' ') == -1)
             {
                 sql = sql + " and ngayky >='" + Class.Functions.ConvertDate(msktungay.Text) + "'";
             }
-            if (msktoingay.Text != "  /  /")
+            if (msktoingay.Text != "  /  /" && msktoingay.Text.Length == 10 && msktoingay.Text.IndexOf(' ') == -1)
             {
                 sql = sql + " and ngayky <='" + Class.Functions.ConvertDate(msktoingay.Text) + "'";
+            }
+            if (msktoingay.Text != "  /  /" && msktungay.Text != "  /  /" && Class.Functions.DateDiff(msktungay.Text, msktoingay.Text) < 0)
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                msktoingay.Focus();
+                return;
             }
             if (txtgiatri.Text != "")
             {
@@ -129,7 +135,6 @@ namespace QLHD_QC_VB.Forms
         private void btntimlai_Click(object sender, EventArgs e)
         {
             resetvalues();
-            DataGridView.DataSource = null;
         }
 
         private void btndong_Click(object sender, EventArgs e)
