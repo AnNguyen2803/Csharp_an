@@ -47,6 +47,8 @@ namespace QLHD_QC_VB.Forms
             msktungay.Text = "";
             rdotheokhoang.Checked = false;
             rdotheongay.Checked = false;
+            txttongtien.Text = "";
+            lblbangchu.Text = "Bằng chữ:";
             DataGridView.DataSource = null;
         }
 
@@ -108,12 +110,12 @@ namespace QLHD_QC_VB.Forms
             from_dt = ",coalesce(sum(doanhthu),0) as doanhthu from ( " +
                 "select ngayky,tenbao,coalesce(sum(dongia * abs(datediff(day,ngaykt,ngaybd))),0) as doanhthu " +
                 "from quangcao a join chitietquangcao b on a.maqc=b.maqc " +
-                "join bao c on b.mabao=c.mabao join dichvu d on d.madv=b.madv " +
+                "join bao c on b.mabao=c.mabao " +
                 "group by tenbao,ngayky " +
                 "union " +
                 "select ngayky,tenbao,coalesce(sum(nhuanbut),0) as doanhthu " +
                 "from vietbai a full join chitietvietbai b on a.mavb=b.mavb " +
-                "join bao c on b.mabao=c.mabao join theloai d on d.matheloai=b.matheloai " +
+                "join bao c on b.mabao=c.mabao " +
                 "group by tenbao,ngayky) a where 1=1 ";
             if (cbotobao.SelectedValue != null)
             {
@@ -234,6 +236,8 @@ namespace QLHD_QC_VB.Forms
                 DataGridView.DataSource = tblbaocaodt;
                 load_data();
             }
+            txttongtien.Text = Convert.ToString(Class.Functions.GetFieldValues("select coalesce(sum(doanhthu),0) as doanhthu from(" + sql + ") a"));
+            lblbangchu.Text = "Bằng chữ: " + Class.Functions.ConvertNumberToString(txttongtien.Text);
         }
         private void load_data()
         {
