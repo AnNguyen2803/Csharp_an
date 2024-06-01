@@ -108,6 +108,7 @@
             btninbaocao.TabIndex = 5;
             btninbaocao.Text = "In báo cáo";
             btninbaocao.UseVisualStyleBackColor = true;
+            btninbaocao.Click += btninbaocao_Click;
             // 
             // cbotobao
             // 
@@ -311,6 +312,7 @@
             btndong.TabIndex = 23;
             btndong.Text = "Đóng";
             btndong.UseVisualStyleBackColor = true;
+            btndong.Click += btndong_Click;
             // 
             // chkquangcao
             // 

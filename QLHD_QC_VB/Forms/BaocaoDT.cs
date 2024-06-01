@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using COMExcel = Microsoft.Office.Interop.Excel;
 
 namespace QLHD_QC_VB.Forms
 {
@@ -32,6 +33,7 @@ namespace QLHD_QC_VB.Forms
             msktheongay.Enabled = false;
             grbtheokhoang.Enabled = false;
             txttongtien.ReadOnly = true;
+            btninbaocao.Enabled = false;
         }
         private void resetvalues()
         {
@@ -85,6 +87,7 @@ namespace QLHD_QC_VB.Forms
         private void btnlammoi_Click(object sender, EventArgs e)
         {
             resetvalues();
+            btninbaocao.Enabled = false;
         }
 
         private void btnhienthi_Click(object sender, EventArgs e)
@@ -95,7 +98,7 @@ namespace QLHD_QC_VB.Forms
                 MessageBox.Show("Hãy nhập ít nhất một điều kiện để hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string col, from_dtqc, from_dt, from_dtvb, groupby, where,having;
+            string col, from_dtqc, from_dt, from_dtvb, groupby, where, having;
             where = "";
             groupby = "group by ";
             having = "";
@@ -151,7 +154,7 @@ namespace QLHD_QC_VB.Forms
             {
                 if (!chkbao.Checked && !chkquangcao.Checked && !chkvietbai.Checked && !rdotheokhoang.Checked && !rdotheongay.Checked)
                 {
-                    MessageBox.Show("Hãy chọn một tiêu chí báo cáo","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Hãy chọn một tiêu chí báo cáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (chkquangcao.Checked)
@@ -235,6 +238,7 @@ namespace QLHD_QC_VB.Forms
                 MessageBox.Show("Có " + tblbaocaodt.Rows.Count + " bản ghi thỏa mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DataGridView.DataSource = tblbaocaodt;
                 load_data();
+                btninbaocao.Enabled = true;
             }
             txttongtien.Text = Convert.ToString(Class.Functions.GetFieldValues("select coalesce(sum(doanhthu),0) as doanhthu from(" + sql + ") a"));
             lblbangchu.Text = "Bằng chữ: " + Class.Functions.ConvertNumberToString(txttongtien.Text);
@@ -366,6 +370,121 @@ namespace QLHD_QC_VB.Forms
             else
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btninbaocao_Click(object sender, EventArgs e)
+        {
+            COMExcel.Application exApp = new COMExcel.Application();
+            COMExcel.Workbook exBook;
+            COMExcel.Worksheet exSheet;
+            COMExcel.Range exRange;
+            int row = 0, col = 0;
+            exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
+            exSheet = exBook.Worksheets[1];
+            exRange = exSheet.Cells[1, 1];
+
+            exRange.Range["A1:E1"].MergeCells = true;
+            exRange.Range["A1:E1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A1:E1"].Value = "Báo cáo doanh thu";
+            exRange.Range["A1:E1"].Font.ColorIndex = 3;
+
+            exRange.Range["A2:A2"].Value = "STT";
+            if (chkbao.Checked)
+            {
+                if (rdotheongay.Checked || rdotheokhoang.Checked)
+                {
+                    exRange.Range["B2:B2"].Value = "Ngày ký";
+                    exRange.Range["C2:C2"].Value = "Tên báo";
+                    exRange.Range["D2:D2"].Value = "Doanh thu";
+                }
+                else
+                {
+                    exRange.Range["B2:B2"].Value = "Tên báo";
+                    exRange.Range["C2:C2"].Value = "Doanh thu";
+                }
+            }
+            if ((rdotheokhoang.Checked || rdotheongay.Checked) && !chkbao.Checked)
+            {
+                exRange.Range["B2:B2"].Value = "Ngày ký";
+                exRange.Range["C2:C2"].Value = "Doanh thu";
+            }
+            if (chkquangcao.Checked)
+            {
+                if (chkbao.Checked && (rdotheongay.Checked || rdotheokhoang.Checked))
+                {
+                    exRange.Range["B2:B2"].Value = "Ngày ký";
+                    exRange.Range["C2:C2"].Value = "Tên báo";
+                    exRange.Range["D2:D2"].Value = "Dịch vụ";
+                    exRange.Range["E2:E2"].Value = "Doanh thu";
+                }
+                else if (chkbao.Checked)
+                {
+                    exRange.Range["B2:B2"].Value = "Tên báo";
+                    exRange.Range["C2:C2"].Value = "Dịch vụ";
+                    exRange.Range["D2:D2"].Value = "Doanh thu";
+                }
+                else if (rdotheongay.Checked || rdotheokhoang.Checked)
+                {
+                    exRange.Range["B2:B2"].Value = "Ngày ký";
+                    exRange.Range["C2:C2"].Value = "Dịch vụ";
+                    exRange.Range["D2:D2"].Value = "Doanh thu";
+                }
+                else
+                {
+                    exRange.Range["B2:B2"].Value = "Dịch vụ";
+                    exRange.Range["C2:C2"].Value = "Doanh thu";
+                }
+            }
+            if (chkvietbai.Checked)
+            {
+                if (chkbao.Checked && (rdotheongay.Checked || rdotheokhoang.Checked))
+                {
+                    exRange.Range["B2:B2"].Value = "Ngày ký";
+                    exRange.Range["C2:C2"].Value = "Tên báo";
+                    exRange.Range["D2:D2"].Value = "Thể loại";
+                    exRange.Range["E2:E2"].Value = "Doanh thu";
+                }
+                else if (chkbao.Checked)
+                {
+                    exRange.Range["B2:B2"].Value = "Tên báo";
+                    exRange.Range["C2:C2"].Value = "Thể loại";
+                    exRange.Range["D2:D2"].Value = "Doanh thu";
+                }
+                else if (rdotheongay.Checked || rdotheokhoang.Checked)
+                {
+                    exRange.Range["B2:B2"].Value = "Ngày ký";
+                    exRange.Range["C2:C2"].Value = "Thể loại";
+                    exRange.Range["D2:D2"].Value = "Doanh thu";
+                }
+                else
+                {
+                    exRange.Range["B2:B2"].Value = "Thể loại";
+                    exRange.Range["C2:C2"].Value = "Doanh thu";
+                }
+            }
+            for (row = 0; row <= tblbaocaodt.Rows.Count - 1; row++)
+            {
+                exSheet.Cells[1][row + 2] = row + 1; //điền số thứ tự vào ô đầu tiên trong mỗi hàng
+                for (col = 0; col <= tblbaocaodt.Columns.Count - 1; col++)
+                {
+                    if (tblbaocaodt.Columns[col].ColumnName == "ngayky")
+                    {
+                        exSheet.Cells[col + 2][row + 2] = Convert.ToDateTime(tblbaocaodt.Rows[row]["ngayky"]);
+                    }
+                    else
+                    {
+                        exSheet.Cells[col + 2][row + 2] = tblbaocaodt.Rows[row][col].ToString();
+                    }
+                }
+            }
+        }
+
+        private void btndong_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn đóng chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }
