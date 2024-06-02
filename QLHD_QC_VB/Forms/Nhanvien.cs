@@ -47,10 +47,6 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[4].HeaderText = "Điện thoại";
             DataGridView.Columns[5].HeaderText = "Email";
             DataGridView.Columns[6].HeaderText = "Ngày sinh";
-            //DataGridView.Columns[7].HeaderText = "Mã chuyên môn";
-            //DataGridView.Columns[8].HeaderText = "Mã trình độ";
-            //DataGridView.Columns[9].HeaderText = "Mã chức vụ";
-            //DataGridView.Columns[10].HeaderText = "Mã phòng ban";
             DataGridView.Columns[0].Width = 150;
             DataGridView.Columns[1].Width = 150;
             DataGridView.Columns[2].Width = 75;
@@ -58,10 +54,6 @@ namespace QLHD_QC_VB.Forms
             DataGridView.Columns[4].Width = 125;
             DataGridView.Columns[5].Width = 130;
             DataGridView.Columns[6].Width = 120;
-            //DataGridView.Columns[7].Width = 150;
-            //DataGridView.Columns[8].Width = 150;
-            //DataGridView.Columns[9].Width = 150;
-            //DataGridView.Columns[10].Width = 150;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
