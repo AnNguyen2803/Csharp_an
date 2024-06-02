@@ -85,18 +85,6 @@ namespace QLHD_QC_VB.Forms
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
-        private void load_data_txt()
-        {
-            mskngayky.Text = Class.Functions.GetFieldValues("select ngayky from (select maqc as mahd ,ngayky from quangcao union select mavb as mahd,ngayky from vietbai) a" +
-                " where mahd = '" + txtmahd.Text + "'");
-            string manv, makh;
-            manv = Class.Functions.GetFieldValues("select manv from (select maqc as mahd ,ngayky,manv,makh from quangcao union select mavb as mahd,ngayky,manv,makh from vietbai) a" +
-                " where mahd = '" + txtmahd.Text + "'");
-            cbomanv.Text = Class.Functions.GetFieldValues("select manv from nhanvien where manv = '" + manv + "'");
-            makh = Class.Functions.GetFieldValues("select makh from (select maqc as mahd ,ngayky,manv,makh from quangcao union select mavb as mahd,ngayky,manv,makh from vietbai) a" +
-                " where mahd = '" + txtmahd.Text + "'");
-            cbomakh.Text = Class.Functions.GetFieldValues("select makh from khachhang where makh = '" + makh + "'");
-        }
 
         private void DataGridView_Click(object sender, EventArgs e)
         {
@@ -111,7 +99,15 @@ namespace QLHD_QC_VB.Forms
                 return;
             }
             txtmahd.Text = DataGridView.CurrentRow.Cells["mahd"].Value.ToString();
-            load_data_txt();
+            mskngayky.Text = Class.Functions.GetFieldValues("select ngayky from (select maqc as mahd ,ngayky from quangcao union select mavb as mahd,ngayky from vietbai) a" +
+                " where mahd = '" + txtmahd.Text + "'");
+            string manv, makh;
+            manv = Class.Functions.GetFieldValues("select manv from (select maqc as mahd ,ngayky,manv,makh from quangcao union select mavb as mahd,ngayky,manv,makh from vietbai) a" +
+                " where mahd = '" + txtmahd.Text + "'");
+            cbomanv.Text = Class.Functions.GetFieldValues("select manv from nhanvien where manv = '" + manv + "'");
+            makh = Class.Functions.GetFieldValues("select makh from (select maqc as mahd ,ngayky,manv,makh from quangcao union select mavb as mahd,ngayky,manv,makh from vietbai) a" +
+                " where mahd = '" + txtmahd.Text + "'");
+            cbomakh.Text = Class.Functions.GetFieldValues("select makh from khachhang where makh = '" + makh + "'");
             btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnlammoi.Enabled = true;
