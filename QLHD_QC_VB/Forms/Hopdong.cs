@@ -25,11 +25,6 @@ namespace QLHD_QC_VB.Forms
             cbomakh.Text = "";
             cbomanv.Text = "";
         }
-        //string makh = "";
-        //public void GetValue(string value)
-        //{
-        //    makh = value;
-        //}
 
         private void Hopdong_Load(object sender, EventArgs e)
         {

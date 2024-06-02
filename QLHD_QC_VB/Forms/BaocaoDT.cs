@@ -93,7 +93,7 @@ namespace QLHD_QC_VB.Forms
         private void btnhienthi_Click(object sender, EventArgs e)
         {
             string sql = "";
-            if ((!chkbao.Checked) && (!chkquangcao.Checked) && (!chkvietbai.Checked) && (!rdotheokhoang.Checked || !rdotheongay.Checked))
+            if ((!chkbao.Checked) && (!chkquangcao.Checked) && (!chkvietbai.Checked) && !rdotheokhoang.Checked && !rdotheongay.Checked)
             {
                 MessageBox.Show("Hãy nhập ít nhất một điều kiện để hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -465,19 +465,29 @@ namespace QLHD_QC_VB.Forms
             }
             for (row = 0; row <= tblbaocaodt.Rows.Count - 1; row++)
             {
-                exSheet.Cells[1][row + 2] = row + 1; //điền số thứ tự vào ô đầu tiên trong mỗi hàng
+                exSheet.Cells[1][row + 3] = row + 1; //điền số thứ tự vào ô đầu tiên trong mỗi hàng
                 for (col = 0; col <= tblbaocaodt.Columns.Count - 1; col++)
                 {
                     if (tblbaocaodt.Columns[col].ColumnName == "ngayky")
                     {
-                        exSheet.Cells[col + 2][row + 2] = Convert.ToDateTime(tblbaocaodt.Rows[row]["ngayky"]);
+                        exSheet.Cells[col + 2][row + 3] = Convert.ToDateTime(tblbaocaodt.Rows[row]["ngayky"]);
                     }
                     else
                     {
-                        exSheet.Cells[col + 2][row + 2] = tblbaocaodt.Rows[row][col].ToString();
+                        exSheet.Cells[col + 2][row + 3] = tblbaocaodt.Rows[row][col].ToString();
                     }
                 }
             }
+            exRange.Range["G3:G3"].MergeCells = true;
+            exRange.Range["G3:G3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignLeft;
+            exRange.Range["G3:G3"].Value = "Tổng doanh thu";
+            exRange.Range["G3:G3"].Font.Bold = true;
+
+            exRange.Range["H3:H3"].MergeCells = true;
+            exRange.Range["H3:H3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignLeft;
+            exRange.Range["H3:H3"].Value = txttongtien.Text;
+
+            exApp.Visible = true;
         }
 
         private void btndong_Click(object sender, EventArgs e)
