@@ -17,7 +17,7 @@ namespace QLHD_QC_VB.Class
         public static string stringconn;
         public static void Connect()
         {
-            stringconn = "Data Source=ANDY\\SQLEXPRESS;Initial Catalog=BTLC#;Integrated Security=True;Encrypt=False";
+            stringconn = "Data Source=LAPTOP-D752F072\\AN;Initial Catalog=BTLC#;Integrated Security=True;Encrypt=False";
             conn = new SqlConnection();
             conn.ConnectionString = stringconn;
             conn.Open();
